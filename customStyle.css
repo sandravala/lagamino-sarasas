@@ -37,8 +37,15 @@
     --formbox-result-addon-background: transparent
 }
 
-.formbox__field-radio {
-    float: left;
+.formbox__container .formbox__field-checkbox,
+.formbox__container .formbox__field-radio {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    line-height: 1;
+    gap: .5em
+     float: left;
     margin-block-start: 0px;
     margin-left: 8px;
     padding-block-start: 8px;
