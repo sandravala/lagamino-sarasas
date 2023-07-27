@@ -22,12 +22,12 @@
     --formbox-addon-weight: 400;
     --formbox-btn-calc-weight: 500;
     --formbox-btn-calc-color: #071927;
-    --formbox-btn-calc-bg: #7996b0;
-    --formbox-btn-calc-hcolor: #7996b0;
+    --formbox-btn-calc-bg: #ffffff;
+    --formbox-btn-calc-hcolor: #ffffff;
     --formbox-btn-calc-hbg: #071927;
     --formbox-btn-reset-color: #071927;
-    --formbox-btn-reset-bg: #7996b0;
-    --formbox-btn-reset-hcolor: #7996b0;
+    --formbox-btn-reset-bg: #ffffff;
+    --formbox-btn-reset-hcolor: #ffffff;
     --formbox-btn-reset-hbg: #071927;
     --formbox-title-result-color: inherit;
     --formbox-title-result-weight: 600;
@@ -60,3 +60,11 @@
     width: 0;
     height: 0;
     }
+
+.formbox__btn button:not(:hover):not(:active).formbox__btn-calc {
+    border-color: #071927;
+}
+
+.formbox__btn button:not(:hover):not(:active).formbox__btn-reset {
+    border-color: #071927;
+}
