@@ -69,6 +69,6 @@
     border-color: #071927;
 }
 
-.formbox__field label #rLabel {
+#rLabel {
     margin-left: 8px;
 }
