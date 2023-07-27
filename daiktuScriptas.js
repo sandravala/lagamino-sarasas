@@ -28,7 +28,7 @@ rangeInputs[1].addEventListener("input", function(){
 });
 
 function pridetiPrintBtn() {
-document.getElementsByClassName('formbox__title')[4].innerHtml = printBtn;
+document.getElementsByClassName('formbox__title')[4].innerHTML = printBtn;
 }
 
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
