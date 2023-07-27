@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.formbox {
+    --formbox-font-size: 16px;
+    --formbox-radius: 0.25em;
+    --formbox-shadow: none;
+    --formbox-hr-color: #f5f5f5;
+    --formbox-title-weight: 600;
+    --formbox-title-size: 1em; 
+    --formbox-title-color: inherit;
+    --formbox-title-font: inherit;
+    --formbox-field-border-color: #dbdbdb;
+    --formbox-field-border-width: 1px;
+    --formbox-field-background: transparent;
+    --formbox-field-color: inherit;
+    --formbox-field-border-hcolor: #dbdbdb;
+    --form-field-height: 2.5em;
+    --formbox-field-readonly-background: transparent;
+    --formbox-field-readonly-color: inherit;
+    --formbox-addon-color: inherit;
+    --formbox-addon-background: #f5f5f5;
+    --formbox-addon-weight: 400;
+    --formbox-btn-calc-weight: 500;
+    --formbox-btn-calc-color: #071927;
+    --formbox-btn-calc-bg: #ffffff;
+    --formbox-btn-calc-hcolor: #ffffff;
+    --formbox-btn-calc-hbg: #071927;
+    --formbox-btn-reset-color: #071927;
+    --formbox-btn-reset-bg: #ffffff;
+    --formbox-btn-reset-hcolor: #ffffff;
+    --formbox-btn-reset-hbg: #071927;
+    --formbox-title-result-color: inherit;
+    --formbox-title-result-weight: 600;
+    --formbox-field-border-result-color: #dbdbdb;
+    --formbox-field-result-background: transparent;
+    --formbox-result-addon-color: inherit;
+    --formbox-result-addon-background: transparent
+}
