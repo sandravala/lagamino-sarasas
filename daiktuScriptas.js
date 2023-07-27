@@ -24,3 +24,21 @@ document.getElementsByClassName('has-result')[0].setAttribute('id', 'is-hidden')
 titles[0].innerHTML = 'Atostogų trukmė: ';
 titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ';
 })
+
+let printBtn = 
+`
+<div class="formbox__actions_btns">
+<div class="formbox__actions">
+<button class="formbox__action-btn formbox__btn-link" id="formbox-btn-link-13">
+<span class="cb-icon-link"></span>
+<span class="cb__tooltip">Copy Link</span>
+</button>
+<div class="formbox__footer-separate">|</div>
+<button class="formbox__action-btn formbox__btn-print" name="cb_view" value="13">
+<span class="cb-icon-print"></span>
+<span class="cb__tooltip">Print Result</span>
+</button>
+</div><input type="hidden" id="print_calculator_13" name="print_calculator_13" value="32701e0098"><input type="hidden" name="_wp_http_referer" value="/lagamino-turinys/"></div>
+`;
+
+document.getElementsbyClassName('formbox-wrapper')[0].appendChild(printBtn);
