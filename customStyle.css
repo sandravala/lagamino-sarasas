@@ -36,3 +36,10 @@
     --formbox-result-addon-color: inherit;
     --formbox-result-addon-background: transparent
 }
+
+.formbox__field-radio {
+    float: left;
+    margin-block-start: 0px;
+    margin-left: 8px;
+    padding-block-start: 8px;
+}
