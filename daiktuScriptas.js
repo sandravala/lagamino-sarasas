@@ -27,10 +27,14 @@ rangeInputs[1].addEventListener("input", function(){
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
 });
 
+function pridetiPrintBtn() {
+document.getElementsByClassName('formbox__title')[4].innerHtml = printBtn;
+}
+
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 document.getElementsByClassName('has-result')[0].removeAttribute('id');
-document.getElementsByClassName('has-result')[0].appendChild(printBtn);	
+pridetiPrintBtn();	
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
