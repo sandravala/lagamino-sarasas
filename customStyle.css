@@ -68,3 +68,7 @@
 .formbox__btn button:not(:hover):not(:active).formbox__btn-reset {
     border-color: #071927;
 }
+
+.formbox__field label #rLabel {
+    margin-left: 8px;
+}
