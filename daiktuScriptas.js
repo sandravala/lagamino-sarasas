@@ -17,3 +17,8 @@ let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 document.getElementsByClassName('has-result')[0].removeAttribute('id');
 })
+
+let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
+buttonReset.addEventListener("click", function(){
+document.getElementsByClassName('has-result')[0].setAttribute('id', 'is-hidden');
+})
