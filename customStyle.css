@@ -44,6 +44,10 @@
     padding-block-start: 8px;
 }
 
+.formbox__container .formbox__field-radio+.formbox__field-radio {
+    margin-block-start: 0px;
+}
+
 .formbox__container .formbox__field-checkbox label, 
 .formbox__container .formbox__field-radio label {
     flex: 1;
