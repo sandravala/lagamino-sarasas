@@ -53,3 +53,10 @@
     flex: 1;
     font-size: .8em;
 }
+
+#is-hidden {
+        display: none;
+        visibility: hidden;
+    width: 0;
+    height: 0;
+    }
