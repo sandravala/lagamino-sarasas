@@ -1,4 +1,4 @@
-console.log('edit new');
+console.log('reikia padaryti disabled visus input jeigu langas su print parametru');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
