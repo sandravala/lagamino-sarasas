@@ -5,7 +5,12 @@ let resultBlock = document.getElementsByClassName('has-result')[0];
 window.location.search.includes('print_calculator') ? document.getElementsByClassName('has-result')[0].removeAttribute('id'): resultBlock.setAttribute('id', 'is-hidden');
 
 window.location.search.includes('print_calculator') ? document.getElementsByClassName('button pdf')[0].setAttribute('data-name','12GM Daiktų sąrašas atostogoms');
-
+// jeigu print langas
+// ištrinam pirmus keturis konteinerius
+// pridedam  (arba keičiam?) divą su tekstu 12 GM daiktų sąrašas atostogoms
+//document.querySelectorAll(".class1.class2"); cia - kad elementas turėtų visas nurodytas klases
+// fieldset .formbox__container.has-result pirmas elementas [0] - title. ištrinam visai
+// reikia pakoreguoti rezultato generavimą, kad kiekviena daiktų grupė eitų į bendrą div'ą
 
 let touched = 0;
 
