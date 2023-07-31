@@ -4,6 +4,9 @@ let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
 window.location.search.includes('print_calculator') ? document.getElementsByClassName('has-result')[0].removeAttribute('id'): resultBlock.setAttribute('id', 'is-hidden');
 
+window.location.search.includes('print_calculator') ? document.getElementsByClassName('button pdf')[0].setAttribute('data-name','12GM Daiktų sąrašas atostogoms');
+
+
 let touched = 0;
 
 let printBtn = `
