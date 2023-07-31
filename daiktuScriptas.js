@@ -1,8 +1,9 @@
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
-let touched = 0;
+resultBlock.setAttribute('id', 'is-hidden');
 
+let touched = 0;
 
 let printBtn = `
 <div class="formbox__actions_btns"><div class="formbox__actions">
@@ -18,7 +19,7 @@ let printBtn = `
 				</div><input type="hidden" id="print_calculator_13" name="print_calculator_13" value="378024d43c"><input type="hidden" name="_wp_http_referer" value="/atostogos-ka-isideti-i-lagamina/"></div>
 `;
 
-resultBlock.setAttribute('id', 'is-hidden');
+
 
 rangeInputs[0].addEventListener("input", function(){
 	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
