@@ -1,4 +1,4 @@
-console.log('edit');
+console.log('edit new');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
@@ -41,7 +41,7 @@ document.getElementsByClassName('formbox__title')[4].innerHTML = printBtn;
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 document.getElementsByClassName('has-result')[0].removeAttribute('id');
-pridetiPrintBtn();	
+//pridetiPrintBtn();	
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
