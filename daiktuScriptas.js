@@ -1,4 +1,4 @@
-console.log('sausdinti');
+console.log('SP');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
@@ -67,7 +67,7 @@ function printData() {
 	            	</div>`;
 	
 	const dataToPrint = document.getElementById('for-printing');
-	const url = location.protocol + '//' + location.host + '/spausdinti.html' ;
+	const url = location.protocol + '//' + location.host + '/spausdinti' ;
 	newWin = window.open(url, "_blank");
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
