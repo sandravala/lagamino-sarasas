@@ -14,3 +14,16 @@
 .dont-print {
 	display: none;
 }
+
+a {
+	padding: 5px;
+}
+
+.site-description {
+	padding: 5px;
+}
+
+.site-branding {
+text-align: center;
+    width: 790px;
+}
