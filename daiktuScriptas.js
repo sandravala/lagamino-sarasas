@@ -4,9 +4,6 @@ let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
 let touched = 0;
 
-window.location.search.includes('print_calculator') ? concole.log('print') : null;
-
-
 let printBtn = `
 <div class="formbox__actions_btns"><div class="formbox__actions">
 					<button class="formbox__action-btn formbox__btn-link" id="formbox-btn-link-13">
@@ -25,109 +22,69 @@ function deleteResultTitle() {
 	document.querySelectorAll('.formbox__container.has-result')[0].removeChild(document.querySelectorAll('.formbox__container.has-result')[0].firstChild);
 };
 
-if (window.location.search.includes('print_calculator')) {
+	
+resultBlock.setAttribute('id', 'is-hidden');
 
-	document.addEventListener('DOMContentLoaded', function() {
+// cia istrinu result title, kad liktu tik saraso blokas
+deleteResultTitle();
 
-	
-		//cia pasidarau pavadinima
-		const newDiv = document.createElement('div');
-		newDiv.innerHTML = 'pavadinimas';
-		const result = document.getElementsByName('formbox')[0];
-		result.insertBefore(newDiv, result.firstChild);
-	
-		//istrinam nereikalingus elementus
-		const formContainers = document.querySelectorAll('.formbox__container');
-		const filteredContainers = Array.from(formContainers).filter((element) => {
-			return element.classList.length === 1 && element.classList.contains('formbox__container');
-		});
-		if (filteredContainers.length > 0) {
-		    for (let i = 0; i < filteredContainers.length - 1; i++) {
-		    filteredContainers[i].parentNode.removeChild(filteredContainers[i]);
-		  }
-		}
+rangeInputs[0].addEventListener("input", function(){
+	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
+	titles[0].innerHTML = 'Atostogų trukmė: ' + value + ' d.';
+	touched = 1;
+});
 
-		deleteResultTitle();
-		
-		//nuimam hidden atributa nuo saraso
-		resultBlock.removeAttribute('id');
-	
-		//pakeiciam mygtuku teksta ir failo pavadinima
-		document.querySelectorAll('.button.pdf')[0].innerHTML('Parsisiųsti');
-		document.querySelectorAll('.button.print')[0].innerHTML('Spausdinti');
-		document.querySelectorAll('.button.pdf')[0].setAttribute('data-name','12GM-Daiktu-sarasas-atostogoms.pdf');
-	});
+rangeInputs[1].addEventListener("input", function(){
+	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : rangeInputs[1].value;
+	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
+	touched = 1;
+});
 
-} else {
-	
-	resultBlock.setAttribute('id', 'is-hidden');
-	
-	// cia istrinu result title, kad liktu tik saraso blokas
-	deleteResultTitle();
-	
-	rangeInputs[0].addEventListener("input", function(){
-		let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
-		titles[0].innerHTML = 'Atostogų trukmė: ' + value + ' d.';
-		touched = 1;
-	});
-	
-	rangeInputs[1].addEventListener("input", function(){
-		let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : rangeInputs[1].value;
-		titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
-		touched = 1;
-	});
-	
 
-	function rangesTouched() {
-		return !!touched;
-	}
+function rangesTouched() {
+	return !!touched;
+}
 
-	function printData() {
-		const newHead = 
-			`<head>
-    			<!-- Metadata -->
-    			<meta charset="UTF-8">
-    			<meta name="viewport" content="width=device-width,initial-scale=1.0">
-   			<title>Kelionės daiktų sąrašas</title>
-      			<link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
-			<link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
-   
-			<link rel="stylesheet" href="https://www.12gm.lt/wp-content/plugins/calchub/assets/css/style-view.css" type="text/css" media="all">
-			<link rel="stylesheet" href="https://www.12gm.lt/wp-content/plugins/calculator-builder/assets/css/calchub-min.css?ver=1.5.2" type="text/css" media="all">
-   			<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/customStyle.css?ver=1.5.2" media="all">
-   			<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/printStyle.css?ver=1" media="all">
-      			</head>`;
-		
-		const dataToPrint = document.getElementById('for-printing');
-		const url = location.protocol + '//' + location.host + location.pathname + 'print-window';
-		newWin = window.open(url, "_blank");
-		newWin.document.write('<html lang="lt-LT">');
-		newWin.document.write(newHead);
-		newWin.document.write('<body>');
-		newWin.document.write(dataToPrint.outerHTML);
-		newWin.document.write('</body></html>');
-		//newWin.print();
-		//newWin.close();
-	}
+function printData() {
+	const newHead = 
+		`<head>
+		<!-- Metadata -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Kelionės daiktų sąrašas</title>
+		<link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
+		<link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
+
+		<link rel="stylesheet" href="https://www.12gm.lt/wp-content/plugins/calchub/assets/css/style-view.css" type="text/css" media="all">
+		<link rel="stylesheet" href="https://www.12gm.lt/wp-content/plugins/calculator-builder/assets/css/calchub-min.css?ver=1.5.2" type="text/css" media="all">
+		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/customStyle.css?ver=1.5.2" media="all">
+		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/printStyle.css?ver=1" media="all">
+		</head>`;
 	
-	let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
-	buttonGenerate.addEventListener("click", function(){
+	const dataToPrint = document.getElementById('for-printing');
+	const url = location.protocol + '//' + location.host + location.pathname + 'print-window';
+	newWin = window.open(url, "_blank");
+	newWin.document.write('<html lang="lt-LT">');
+	newWin.document.write(newHead);
+	newWin.document.write('<body>');
+	newWin.document.write(dataToPrint.outerHTML);
+	newWin.document.write('</body></html>');
+	//newWin.print();
+	//newWin.close();
+}
+
+let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
+
+buttonGenerate.addEventListener("click", function(){
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
 	document.getElementById('for-printing').addEventListener('click',function(){
 	printData();
-	})
+})
 
-	})
-	
-	let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
+let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
 	buttonReset.addEventListener("click", function(){
 	resultBlock.setAttribute('id', 'is-hidden');
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ';
-	})
-	
-
-	
-
-}
+})
