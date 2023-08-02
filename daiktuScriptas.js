@@ -83,14 +83,15 @@ if (window.location.search.includes('print_calculator')) {
 	
 	let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 	buttonGenerate.addEventListener("click", function(){
-	document.getElementsByClassName('has-result')[0].removeAttribute('id');
+	resultBlock.removeAttribute('id');
+	resultBlock.setAttribute('id', 'for-printing');
 	
 	//pridetiPrintBtn();	
 	})
 	
 	let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
 	buttonReset.addEventListener("click", function(){
-	document.getElementsByClassName('has-result')[0].setAttribute('id', 'is-hidden');
+	resultBlock.setAttribute('id', 'is-hidden');
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ';
 	})
@@ -98,4 +99,17 @@ if (window.location.search.includes('print_calculator')) {
 	function rangesTouched() {
 	return !!touched;
 	}
+
+	function printData()
+	{
+	   var dataToPrint = document.getElementById('for-printing');
+	   newWin = window.open('');
+	   newWin.document.write(dataToPrint.outerHTML);
+	   newWin.print();
+	   newWin.close();
+	}
+	
+	document.getElementById('for-printing').addEventListener('click',function(){
+	printData();
+	})
 }
