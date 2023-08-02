@@ -1,10 +1,40 @@
-console.log('reikia padaryti disabled visus input jeigu langas su print parametru');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
-window.location.search.includes('print_calculator') ? document.getElementsByClassName('has-result')[0].removeAttribute('id'): resultBlock.setAttribute('id', 'is-hidden');
 
-window.location.search.includes('print_calculator') ? document.querySelectorAll('.button.pdf')[0].setAttribute('data-name','12GM-Daiktu-sarasas-atostogoms.pdf') : null;
+if (window.location.search.includes('print_calculator')) {
+	//cia pasidarau pavadinima
+	const newDiv = document.createElement('div');
+	newDiv.innerHTML = 'pavadinimas';
+	const result = document.getElementsByName('formbox')[0];
+	result.insertBefore(newDiv, result.firstChild);
+
+	//istrinam nereikalingus elementus
+	const formContainers = document.querySelectorAll('.formbox__container');
+	const filteredContainers = Array.from(formContainers).filter((element) => {
+		return element.classList.length === 1 && element.classList.contains('formbox__container');
+	});
+	if (filteredContainers.length > 0) {
+	    for (let i = 0; i < filteredContainers.length - 1; i++) {
+	    filteredContainers[i].parentNode.removeChild(filteredContainers[i]);
+	  }
+	}
+	
+	//nuimam hidden atributa nuo saraso
+	resultBlock.removeAttribute('id');
+
+	//pakeiciam mygtuku teksta ir failo pavadinima
+	document.querySelectorAll('.button.pdf')[0].innerHTML('Parsisiųsti');
+	document.querySelectorAll('.button.print')[0].innerHTML('Spausdinti');
+	document.querySelectorAll('.button.pdf')[0].setAttribute('data-name','12GM-Daiktu-sarasas-atostogoms.pdf');
+
+} else {
+	resultBlock.setAttribute('id', 'is-hidden');
+	// cia istrinu result title, kad liktu tik saraso blokas
+	document.querySelectorAll('.formbox__container.has-result')[0].removeChild(document.querySelectorAll('.formbox__container.has-result')[0].firstChild);
+}
+
+window.location.search.includes('print_calculator') ? : null;
 // jeigu print langas
 // ištrinam pirmus keturis konteinerius
 // pridedam  (arba keičiam?) divą su tekstu 12 GM daiktų sąrašas atostogoms
@@ -49,6 +79,7 @@ document.getElementsByClassName('formbox__title')[4].innerHTML = printBtn;
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 document.getElementsByClassName('has-result')[0].removeAttribute('id');
+
 //pridetiPrintBtn();	
 })
 
