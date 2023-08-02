@@ -78,6 +78,11 @@ function printData() {
 	//newWin.close();
 }
 
+function generateAlert(checkboxTouched) {
+	const alertText = rangesTouched() || checkboxTouched ? null : 'error';
+	return alertText;
+}
+
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 
 buttonGenerate.addEventListener("click", function(){
