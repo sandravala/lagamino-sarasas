@@ -1,4 +1,4 @@
-console.log('SP');
+console.log('form');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
@@ -67,7 +67,19 @@ function printData() {
 	            	</div>`;
 	
 	const dataToPrint = document.getElementById('for-printing');
-	const url = location.protocol + '//' + location.host + '/spausdinti' ;
+
+	const form = document.getElementById('calculator_' + 13);
+        const formData = new FormData(form);
+        const nonce = document.getElementById('print_calculator_' + 13).value;
+        const nonceString = 'print_calculator_' + 13 + '=' + nonce;
+        const url = location.protocol + '//' + location.host + location.pathname + '?cb_view=' + id + '&' + nonceString;
+        let object = {};
+        //formData.forEach((value, key) => object[key] = value);
+        //const json = JSON.stringify(object);
+
+        //setLocalStorage(id, 'print', json);
+	
+	//const url = location.protocol + '//' + location.host + '/spausdinti' ;
 	newWin = window.open(url, "_blank");
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
