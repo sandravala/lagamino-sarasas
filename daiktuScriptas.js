@@ -1,4 +1,4 @@
-console.log('copy head');
+console.log('styling');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
@@ -83,10 +83,24 @@ if (window.location.search.includes('print_calculator')) {
 	}
 
 	function printData() {
-		const newHead = document.head;
+		const newHead = 
+			`<head>
+    			<!-- Metadata -->
+    			<meta charset="UTF-8">
+    			<meta name="viewport" content="width=device-width,initial-scale=1.0">
+   			<title>Kelionės daiktų sąrašas</title>
+      			<link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
+			<link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
+   
+			<link rel="stylesheet" href="https://www.12gm.lt/wp-content/plugins/calchub/assets/css/style-view.css" type="text/css" media="all">
+			<link rel="stylesheet" href="https://www.12gm.lt/wp-content/plugins/calculator-builder/assets/css/calchub-min.css?ver=1.5.2" type="text/css" media="all">
+   			<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/customStyle.css?ver=1.5.2" media="all">
+      			</head>`;
+		
 		const dataToPrint = document.getElementById('for-printing');
-		newWin = window.open('');
-		newWin.document.write('<html>');
+		const url = location.protocol + '//' + location.host + location.pathname + 'print-window';
+		newWin = window.open(ur, "_blank");
+		newWin.document.write('<html lang="lt-LT">');
 		newWin.document.write(newHead);
 		newWin.document.write('<body>');
 		newWin.document.write(dataToPrint.outerHTML);
