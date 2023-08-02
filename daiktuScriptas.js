@@ -91,8 +91,8 @@ if (window.location.search.includes('print_calculator')) {
 		newWin.document.write('<body>');
 		newWin.document.write(dataToPrint.outerHTML);
 		newWin.document.write('</body></html>');
-		newWin.print();
-		newWin.close();
+		//newWin.print();
+		//newWin.close();
 	}
 	
 	let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
