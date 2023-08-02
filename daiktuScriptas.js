@@ -1,4 +1,4 @@
-console.log('pakeista');
+console.log('pakeista vel');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
@@ -24,8 +24,11 @@ function deleteResultTitle() {
 
 if (window.location.search.includes('print_calculator')) {
 
+	console.log('print langas');
 	document.addEventListener('DOMContentLoaded', function() {
 
+		console.log('DOMContentLoaded');
+		
 		//cia pasidarau pavadinima
 		const newDiv = document.createElement('div');
 		newDiv.innerHTML = 'pavadinimas';
