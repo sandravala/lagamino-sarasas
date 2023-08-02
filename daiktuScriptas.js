@@ -3,6 +3,7 @@ let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
 let touched = 0;
+let alertText = null;
 
 let printBtn = `
 <div class="formbox__actions_btns"><div class="formbox__actions">
@@ -79,8 +80,7 @@ function printData() {
 }
 
 function generateAlert(checkboxTouched) {
-	const alertText = rangesTouched() || checkboxTouched ? null : 'error';
-	return alertText;
+	alertText = rangesTouched() || checkboxTouched ? null : 'error';
 }
 
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
@@ -91,6 +91,7 @@ buttonGenerate.addEventListener("click", function(){
 	if (!!touched) { 
 		document.getElementById('custom-print-btn').addEventListener('click', printData())
 	}
+	
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
