@@ -80,6 +80,7 @@ buttonGenerate.addEventListener("click", function(){
 	resultBlock.setAttribute('id', 'for-printing');
 	document.getElementById('for-printing').addEventListener('click',function(){
 	printData();
+	})
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
