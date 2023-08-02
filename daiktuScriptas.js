@@ -83,11 +83,16 @@ if (window.location.search.includes('print_calculator')) {
 	}
 
 	function printData() {
-	   var dataToPrint = document.getElementById('for-printing');
-	   newWin = window.open('');
-	   newWin.document.write(dataToPrint.outerHTML);
-	   newWin.print();
-	   newWin.close();
+		const newHead = document.head;
+		const dataToPrint = document.getElementById('for-printing');
+		newWin = window.open('');
+		newWin.document.write('<html>');
+		newWin.document.write(newHead);
+		newWin.document.write('<body>');
+		newWin.document.write(dataToPrint.outerHTML);
+		newWin.document.write('</body></html>');
+		newWin.print();
+		newWin.close();
 	}
 	
 	let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
