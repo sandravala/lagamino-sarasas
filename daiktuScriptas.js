@@ -67,7 +67,7 @@ function printData() {
 	            	</div>`;
 	
 	const dataToPrint = document.getElementById('for-printing');
-	const url = location.protocol + '//' + location.host + location.pathname + 'print-window';
+	const url = location.protocol + '//' + location.host + location.pathname + '?print-window=1';
 	newWin = window.open(url, "_blank");
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
