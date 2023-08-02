@@ -4,6 +4,9 @@ let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
 let touched = 0;
 
+window.location.search.includes('print_calculator') ? concole.log('print') : null;
+
+
 let printBtn = `
 <div class="formbox__actions_btns"><div class="formbox__actions">
 					<button class="formbox__action-btn formbox__btn-link" id="formbox-btn-link-13">
