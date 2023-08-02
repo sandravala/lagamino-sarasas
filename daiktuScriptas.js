@@ -1,4 +1,4 @@
-console.log('pakeista vel');
+console.log('edit');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
