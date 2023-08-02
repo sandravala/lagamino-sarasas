@@ -37,10 +37,6 @@
     --formbox-result-addon-background: transparent
 }
 
-.formbox__container {
-    border: transparent;
-}
-
 .formbox__container .formbox__field-radio {
     float: left;
     margin-block-start: 0px;
