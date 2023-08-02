@@ -1,4 +1,4 @@
-console.log('styling');
+console.log('stylingG');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
@@ -99,7 +99,7 @@ if (window.location.search.includes('print_calculator')) {
 		
 		const dataToPrint = document.getElementById('for-printing');
 		const url = location.protocol + '//' + location.host + location.pathname + 'print-window';
-		newWin = window.open(ur, "_blank");
+		newWin = window.open(url, "_blank");
 		newWin.document.write('<html lang="lt-LT">');
 		newWin.document.write(newHead);
 		newWin.document.write('<body>');
