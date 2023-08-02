@@ -10,3 +10,7 @@
 .formbox__container {
 	border: transparent;
 }
+
+.print-btn {
+	display: none;
+}
