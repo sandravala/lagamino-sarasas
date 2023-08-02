@@ -34,14 +34,6 @@ if (window.location.search.includes('print_calculator')) {
 	document.querySelectorAll('.formbox__container.has-result')[0].removeChild(document.querySelectorAll('.formbox__container.has-result')[0].firstChild);
 }
 
-window.location.search.includes('print_calculator') ? : null;
-// jeigu print langas
-// ištrinam pirmus keturis konteinerius
-// pridedam  (arba keičiam?) divą su tekstu 12 GM daiktų sąrašas atostogoms
-//document.querySelectorAll(".class1.class2"); cia - kad elementas turėtų visas nurodytas klases
-// fieldset .formbox__container.has-result pirmas elementas [0] - title. ištrinam visai
-// reikia pakoreguoti rezultato generavimą, kad kiekviena daiktų grupė eitų į bendrą div'ą
-
 let touched = 0;
 
 let printBtn = `
