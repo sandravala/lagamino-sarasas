@@ -17,6 +17,10 @@ let printBtn = `
 				</div><input type="hidden" id="print_calculator_13" name="print_calculator_13" value="378024d43c"><input type="hidden" name="_wp_http_referer" value="/atostogos-ka-isideti-i-lagamina/"></div>
 `;
 
+function deleteResultTitle() {
+	document.querySelectorAll('.formbox__container.has-result')[0].removeChild(document.querySelectorAll('.formbox__container.has-result')[0].firstChild);
+};
+
 if (window.location.search.includes('print_calculator')) {
 
 	document.addEventListener('DOMContentLoaded', function() {
@@ -37,6 +41,8 @@ if (window.location.search.includes('print_calculator')) {
 		    filteredContainers[i].parentNode.removeChild(filteredContainers[i]);
 		  }
 		}
+
+		deleteResultTitle();
 		
 		//nuimam hidden atributa nuo saraso
 		resultBlock.removeAttribute('id');
@@ -48,9 +54,11 @@ if (window.location.search.includes('print_calculator')) {
 	});
 
 } else {
+	
 	resultBlock.setAttribute('id', 'is-hidden');
+	
 	// cia istrinu result title, kad liktu tik saraso blokas
-	document.querySelectorAll('.formbox__container.has-result')[0].removeChild(document.querySelectorAll('.formbox__container.has-result')[0].firstChild);
+	deleteResultTitle();
 	
 	rangeInputs[0].addEventListener("input", function(){
 		let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
@@ -86,9 +94,3 @@ if (window.location.search.includes('print_calculator')) {
 	return !!touched;
 	}
 }
-
-
-
-
-
-
