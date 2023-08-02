@@ -24,11 +24,9 @@ function deleteResultTitle() {
 
 if (window.location.search.includes('print_calculator')) {
 
-	console.log('print langas');
 	document.addEventListener('DOMContentLoaded', function() {
 
-		console.log('DOMContentLoaded');
-		
+	
 		//cia pasidarau pavadinima
 		const newDiv = document.createElement('div');
 		newDiv.innerHTML = 'pavadinimas';
