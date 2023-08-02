@@ -68,15 +68,7 @@ function printData() {
 	
 	const dataToPrint = document.getElementById('for-printing');
 
-	const form = document.getElementById('calculator_' + 13);
-        const formData = new FormData(form);
-        let object = {};
-        //formData.forEach((value, key) => object[key] = value);
-        //const json = JSON.stringify(object);
-
-        //setLocalStorage(id, 'print', json);
-	
-	const url = location.protocol + '//' + location.host + '/spausdinti' ;
+	const url = location.protocol + '//' + location.host + location.pathname;
 	newWin = window.open(url, "_blank");
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
