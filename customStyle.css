@@ -72,3 +72,9 @@
 #rLabel {
     margin-left: 8px;
 }
+
+@media screen and (min-width: 776px) {
+    .formbox__container {
+        grid-template-columns:100%
+    }
+}
