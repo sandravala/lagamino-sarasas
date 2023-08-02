@@ -1,4 +1,4 @@
-console.log('form2');
+console.log('alert');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
@@ -83,9 +83,9 @@ let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
-	document.getElementById('custom-print-btn').addEventListener('click',function(){
-	printData();
-	})
+	if (!!touched) { 
+		document.getElementById('custom-print-btn').addEventListener('click', printData())
+	}
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
