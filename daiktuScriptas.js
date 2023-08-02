@@ -83,7 +83,7 @@ let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
-	document.getElementById('for-printing').addEventListener('click',function(){
+	document.getElementById('custom-print-btn').addEventListener('click',function(){
 	printData();
 	})
 })
