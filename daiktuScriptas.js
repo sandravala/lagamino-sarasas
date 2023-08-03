@@ -168,6 +168,7 @@ function printData() {
 		<link rel="stylesheet" href="https://www.12gm.lt/wp-content/plugins/calculator-builder/assets/css/calchub-min.css?ver=1.5.2" type="text/css" media="all">
 		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/customStyle.css?ver=1.5.2" media="all">
 		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/printStyle.css?ver=1" media="all">
+  		<style>body{background-color:white !important;}@page { size: 297mm 210mm; margin: 10mm 10mm 10mm 10mm; }
 		</head>
 	  		<body>
 	    		<div class="site-branding" style="text-align: center">
