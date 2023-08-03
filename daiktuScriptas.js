@@ -1,4 +1,4 @@
-console.log('print data debug 5');
+console.log('print data debug 6');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
@@ -103,17 +103,9 @@ buttonGenerate.addEventListener("click", function(){
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
 	generateAlert();
-
-	if (inputsTouched()) {
-	console.log('inputs touched');
-		document.getElementById('custom-print-btn').addEventListener('click', function() {
-		//e.preventDefault();
-		console.log('print button addEventListener');
-		printData();
-		});
-		}
-
 })
+
+document.getElementById('custom-print-btn') ? document.getElementById('custom-print-btn').addEventListener('click', printData();) : 'no such element';
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
 
