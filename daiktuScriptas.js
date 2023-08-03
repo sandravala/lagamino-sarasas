@@ -1,7 +1,4 @@
-
-console.log('print data debug 7');
-
-function daiktuSkriptas(dienuSkaicius, temperatura, arSkalbs) {
+console.log('print data debug 8');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
@@ -9,6 +6,10 @@ let resultBlock = document.getElementsByClassName('has-result')[0];
 let rangesTouched = 0;
 let radiosTouched = 0;
 let alertText = null;
+let dienuSkaicius;
+let temperatura;
+let arSkalbs;
+
 
 let marskiniuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : 4;
 let kelniuSkaicius = dienuSkaicius < 4 ? 1 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : arSkalbs? 3 : 4;
@@ -136,19 +137,22 @@ resultBlock.setAttribute('id', 'is-hidden');
 deleteResultTitle();
 
 rangeInputs[0].addEventListener('input', function(){
-	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
+	temperatura = rangeInputs[0].value;
+	let value = temperatura > 14 ? 'daugiau, nei 14' : temperatura;
 	titles[0].innerHTML = 'Atostogų trukmė: ' + value + ' d.';
 	rangesTouched = 1;
 });
 
 rangeInputs[1].addEventListener('input', function(){
-	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : rangeInputs[1].value;
+	dienuSkaicius = rangeInputs[1].value;
+	let value = dienuSkaicius > 25 ? 'daugiau, nei 25' : dienuSkaicius;
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
 	rangesTouched = 1;
 });
 
 for (let i = 0; i < radioInputs.length; i++) {
 	radioInputs[i].addEventListener('change', function() {
+		arSkalbs = radioInputs[i].value;
 		radiosTouched = 1;
 	})
 }
