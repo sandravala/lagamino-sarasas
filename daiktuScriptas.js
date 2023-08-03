@@ -87,7 +87,7 @@ function printData() {
 	//newWin.close();
 }
 
-function generateAlert(checkboxTouched) {
+function generateAlert() {
 	alertText = inputsTouched() ? null : 'error';
 }
 
