@@ -1,4 +1,4 @@
-console.log('btn click prevent default');
+console.log('btn click prevent default stop propagation');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
@@ -99,10 +99,15 @@ let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 
 buttonGenerate.addEventListener("click", function(e){
 	e.preventDefault();
+	e.stopPropagation();
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
 	generateAlert();
-	if (inputsTouched()) { 	document.getElementById('custom-print-btn').addEventListener('click', printData() ) }
+	if (inputsTouched()) {
+		document.getElementById('custom-print-btn').addEventListener('click', function() {
+			printData();
+			}) 
+	}
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
