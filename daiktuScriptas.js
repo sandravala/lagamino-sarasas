@@ -15,8 +15,8 @@ let arSkalbs;
 let marskiniuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : 4;
 let kelniuSkaicius = dienuSkaicius < 4 ? 1 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : arSkalbs? 3 : 4;
 let megztiniuSkaicius = dienuSkaicius < 14 ? 1 : 2;
-let kelnaiciuSkaicius = arSkalbs? Math.trunc(dienuSkaicius * 0.6) < 1 ? 1 : Math.trunc(dienuSkaicius * 0.6) : dienuSkaicius;
-let liemeneliuSkaicius = arSkalbs? Math.trunc(dienuSkaicius * 0.6 * 0.8) < 1 ? 1 : Math.trunc(dienuSkaicius * 0.6) : Math.trunc(dienuSkaicius * 0.8) < 1 ? 1 : Math.trunc(dienuSkaicius * 0.8);
+let kelnaiciuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) < 1 ? 1 : Math.round(dienuSkaicius * 0.6) : dienuSkaicius;
+let liemeneliuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6 * 0.8) < 1 ? 1 : Math.round(dienuSkaicius * 0.6) : Math.round(dienuSkaicius * 0.8) < 1 ? 1 : Math.round(dienuSkaicius * 0.8);
 let marskineliuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? arSkalbs? 2 : 3 : arSkalbs? 2 : 4;
 
 let rubai = [
@@ -97,10 +97,6 @@ function generuotiRezultata() {
 <div class="result-grid-column">
 <div class="rHeader">APRANGA</div>
 <div>${generuotiSarasa(rubaiSarasui)}</div>
-// <div>${generuotiSarasa(rubaiSarasui['miego'])}</div>
-// <div>${generuotiSarasa(rubaiSarasui['apatiniai'])}</div>
-// <div>${generuotiSarasa(rubaiSarasui['aksesuarai'])}</div>
-// <div>${generuotiSarasa(rubaiSarasui['avalyne'])}</div>
 </div>
 
 <div class="result-grid-column">
