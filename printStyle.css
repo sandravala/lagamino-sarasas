@@ -32,3 +32,5 @@ a {
 text-align: center;
     width: 790px;
 }
+
+@page { size: landscape; }
