@@ -93,7 +93,7 @@ function generuotiRezultata() {
 <button type="button" style="background-color: #ffffff" id="custom-print-btn" onclick="printData()">
 <i class="bi bi-printer"></i>
 </button></div>
-<div>
+<div class="result-grid-column">
 <div class="rHeader">APRANGA</div>
 <div>${generuotiSarasa(rubaiSarasui['virsutiniai'])}</div>
 <div>${generuotiSarasa(rubaiSarasui['miego'])}</div>
@@ -102,13 +102,18 @@ function generuotiRezultata() {
 <div>${generuotiSarasa(rubaiSarasui['avalyne'])}</div>
 </div>
 
+<div class="result-grid-column">
 <div class="rHeader">DOKUMENTAI</div>
+<div>${generuotiSarasa(dokumentai)}</div>
+
+
 <div class="rHeader">ASMENS HIGIENA | MAKIAŽAS</div>
+<div>${generuotiSarasa(asmensHigiena)}</div>
+
 <div class="rHeader">TECHNIKA</div>
 <div class="rHeader">KITA</div>
 <div class="rHeader">RANKINIS BAGAŽAS</div>
-
-			`
+</div>`
 return rezultatuSarasas;
 }
 
@@ -191,12 +196,10 @@ function getAlert() {
 }
 	
 function getCalculationResult() {
-	
 	return alertText === null ? generuotiRezultata() : alertText;
 }
 
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
-
 buttonGenerate.addEventListener("click", function(){
 	//e.preventDefault();
 	//e.stopPropagation();
@@ -205,17 +208,7 @@ buttonGenerate.addEventListener("click", function(){
 	generateAlertOrResult();
 })
 
-
-
-// function addPrintOption() {
-// 	document.getElementById('custom-print-btn').addEventListener('click', function() {
-// 		printData();
-// 	})
-// }
-
-
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
-
 buttonReset.addEventListener("click", function(e){
 	e.preventDefault();
 	resultBlock.setAttribute('id', 'is-hidden');
