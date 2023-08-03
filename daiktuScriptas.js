@@ -1,4 +1,4 @@
-console.log('print data debug 10');
+console.log('print data debug 12');
 
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
@@ -74,7 +74,7 @@ function generuotiEilute(tekstas) {
 }
 
 function generuotiSarasa(array) {
-	let daiktuKategorija = array[0]['virsutiniai'] ? [...rubaiSarasui['virsutiniai'], ...rubaiSarasui['miego'], ...rubaiSarasui['apatiniai'], ...rubaiSarasui['aksesuarai'], ...rubaiSarasui['avalyne']] : array;
+	let daiktuKategorija = array['virsutiniai'] ? [...rubaiSarasui['virsutiniai'], ...rubaiSarasui['miego'], ...rubaiSarasui['apatiniai'], ...rubaiSarasui['aksesuarai'], ...rubaiSarasui['avalyne']] : array;
 	let container = '';
     for (let i = 0; i < daiktuKategorija.length; i++) {
         container += generuotiEilute(daiktuKategorija[i]);
@@ -96,11 +96,11 @@ function generuotiRezultata() {
 </button></div>
 <div class="result-grid-column">
 <div class="rHeader">APRANGA</div>
-<div>${generuotiSarasa(rubaiSarasui['virsutiniai'])}</div>
-<div>${generuotiSarasa(rubaiSarasui['miego'])}</div>
-<div>${generuotiSarasa(rubaiSarasui['apatiniai'])}</div>
-<div>${generuotiSarasa(rubaiSarasui['aksesuarai'])}</div>
-<div>${generuotiSarasa(rubaiSarasui['avalyne'])}</div>
+<div>${generuotiSarasa(rubaiSarasui)}</div>
+// <div>${generuotiSarasa(rubaiSarasui['miego'])}</div>
+// <div>${generuotiSarasa(rubaiSarasui['apatiniai'])}</div>
+// <div>${generuotiSarasa(rubaiSarasui['aksesuarai'])}</div>
+// <div>${generuotiSarasa(rubaiSarasui['avalyne'])}</div>
 </div>
 
 <div class="result-grid-column">
