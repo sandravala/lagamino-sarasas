@@ -1,4 +1,4 @@
-console.log('btn click prevent default stop propagation');
+console.log('print data');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
@@ -103,12 +103,14 @@ buttonGenerate.addEventListener("click", function(e){
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
 	generateAlert();
-	if (inputsTouched()) {
-		document.getElementById('custom-print-btn').addEventListener('click', function() {
-			printData();
-			}) 
-	}
+
 })
+
+if (inputsTouched()) {
+	document.getElementById('custom-print-btn').addEventListener('click', function() {
+		printData();
+	}) 
+}
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
 
