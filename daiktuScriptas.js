@@ -3,7 +3,7 @@ let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
-let inputsTouched = 0;
+let rangesTouched = 0;
 let radiosTouched = 0;
 let alertText = null;
 
