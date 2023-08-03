@@ -192,11 +192,12 @@ function printData() {
 }
 
 function generateAlertOrResult() {
-	alertText = inputsTouched() ? generuotiRezultata() : 'error';
+	alertText = inputsTouched() ?  null : 'error';
 }
 
 function getCalculationResult() {
-	return alertText;
+	
+	return alertText === null ? generuotiRezultata() : alertText;
 }
 
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
