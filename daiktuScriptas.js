@@ -87,30 +87,33 @@ function generuotiSarasa(array) {
 }
 
 function generuotiRezultata() {
+
+	
+	
 	let rezultatuSarasas = 
 			`
-<div class="dont-print"></div>
-<div class="print-btn dont-print">
-<button type="button" style="background-color: #ffffff" id="custom-print-btn" onclick="printData()">
-<i class="bi bi-printer"></i>
-</button></div>
-<div class="result-grid-column">
-<div class="rHeader">APRANGA</div>
-<div>${generuotiSarasa(rubaiSarasui)}</div>
-</div>
-
-<div class="result-grid-column">
-<div class="rHeader">DOKUMENTAI</div>
-<div>${generuotiSarasa(dokumentai)}</div>
-
-
-<div class="rHeader">ASMENS HIGIENA | MAKIAŽAS</div>
-<div>${generuotiSarasa(asmensHigiena)}</div>
-
-<div class="rHeader">TECHNIKA</div>
-<div class="rHeader">KITA</div>
-<div class="rHeader">RANKINIS BAGAŽAS</div>
-</div>`
+		<div class="dont-print"></div>
+		<div class="print-btn dont-print">
+		<button type="button" style="background-color: #ffffff" id="custom-print-btn" onclick="printData()">
+		<i class="bi bi-printer"></i>
+		</button></div>
+		<div class="result-grid-column">
+		<div class="rHeader">APRANGA</div>
+		<div>${generuotiSarasa(rubaiSarasui)}</div>
+		</div>
+		
+		<div class="result-grid-column">
+		<div class="rHeader">DOKUMENTAI</div>
+		<div>${generuotiSarasa(dokumentai)}</div>
+		
+		
+		<div class="rHeader">ASMENS HIGIENA | MAKIAŽAS</div>
+		<div>${generuotiSarasa(asmensHigiena)}</div>
+		
+		<div class="rHeader">TECHNIKA</div>
+		<div class="rHeader">KITA</div>
+		<div class="rHeader">RANKINIS BAGAŽAS</div>
+		</div>`
 return rezultatuSarasas;
 }
 
