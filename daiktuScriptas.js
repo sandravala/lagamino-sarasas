@@ -1,6 +1,6 @@
-console.log('print data debug 9');
+console.log('print data debug 10');
 import testFunction from 'https://sandravala.github.io/lagamino-sarasas/testScript.js';
-new testFunction();
+testFunction();
 
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
