@@ -193,6 +193,7 @@ function printData() {
 
 function generateAlertOrResult() {
 	alertText = inputsTouched() ?  null : 'error';
+	return alertText;
 }
 
 function getCalculationResult() {
