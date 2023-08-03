@@ -1,4 +1,4 @@
-console.log('print data debug');
+console.log('print data debug 2');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
@@ -98,8 +98,8 @@ function getAlert() {
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 
 buttonGenerate.addEventListener("click", function(e){
-	e.preventDefault();
-	e.stopPropagation();
+	//e.preventDefault();
+	//e.stopPropagation();
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
 	generateAlert();
@@ -109,7 +109,7 @@ buttonGenerate.addEventListener("click", function(e){
 if (inputsTouched()) {
 	console.log('inputs touched');
 	document.getElementById('custom-print-btn').addEventListener('click', function(e) {
-		e.preventDefault();
+		//e.preventDefault();
 		console.log('print button addEventListener');
 		printData();
 	}) 
