@@ -1,4 +1,4 @@
-console.log('generate alert');
+console.log('btn click');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
