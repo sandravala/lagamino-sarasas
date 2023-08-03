@@ -91,6 +91,10 @@ function generateAlert() {
 	alertText = inputsTouched() ? null : 'error';
 }
 
+function getAlert() {
+	return alertText;
+}
+
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 
 buttonGenerate.addEventListener("click", function(){
