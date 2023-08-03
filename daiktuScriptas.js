@@ -1,4 +1,4 @@
-console.log('print data debug 3');
+console.log('print data debug 4');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
