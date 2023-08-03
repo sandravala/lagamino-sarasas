@@ -7,16 +7,20 @@ let resultBlock = document.getElementsByClassName('has-result')[0];
 let rangesTouched = 0;
 let radiosTouched = 0;
 let alertText = null;
-let dienuSkaicius = 1;
-let temperatura = -1;
+let dienuSkaicius;
+let temperatura;
 let arSkalbs;
+let marskiniuSkaicius;
+let kelniuSkaicius;
+let megztiniuSkaicius;
+let kelnaiciuSkaicius;
+let liemeneliuSkaicius;
+let marskineliuSkaicius;
 
 
 
 	
 resultBlock.setAttribute('id', 'is-hidden');
-
-
 
 rangeInputs[0].addEventListener('input', function(){
 	dienuSkaicius = rangeInputs[0].value;
@@ -46,12 +50,13 @@ function inputsTouched() {
 
 
 if (inputsTouched()) {
-	let marskiniuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : 4;
-let kelniuSkaicius = dienuSkaicius < 4 ? 1 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : arSkalbs? 3 : 4;
-let megztiniuSkaicius = dienuSkaicius < 14 ? 1 : 2;
-let kelnaiciuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) : dienuSkaicius;
-let liemeneliuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) : Math.round(dienuSkaicius * 0.8);
-let marskineliuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? arSkalbs? 2 : 3 : arSkalbs? 2 : 4;
+	marskiniuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : 4;
+	kelniuSkaicius = dienuSkaicius < 4 ? 1 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : arSkalbs? 3 : 4;
+	megztiniuSkaicius = dienuSkaicius < 14 ? 1 : 2;
+	kelnaiciuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) : dienuSkaicius;
+	liemeneliuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) : Math.round(dienuSkaicius * 0.8);
+	marskineliuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? arSkalbs? 2 : 3 : arSkalbs? 2 : 4;
+}
 
 let rubai = [
 	//minusine tempa
@@ -97,7 +102,7 @@ let rubai = [
 ]
 
 let rubaiSarasui = temperatura < 0 ? rubai[0] : temperatura >= 0 || temperatura < 10 ? rubai[1] : temperatura >= 10 || temperatura < 16 ? rubai[2] : temperatura >= 16 || temperatura < 24 ? rubai[3] : rubai[4];
-}
+
 
 let dokumentai = ['Asmens dokumentas (tapatybės kortelė | pasas)', 'Draudimas', 'Rezervacijų (viešbučių, pramogų, transporto ir pan.) dokumentai | duomenys', 'Vairuotojo pažymėjimas (jei aktualu)', 'Grynieji (vietos valiuta)', 'Banko kortelės'];
 
