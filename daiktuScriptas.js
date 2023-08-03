@@ -7,8 +7,8 @@ let resultBlock = document.getElementsByClassName('has-result')[0];
 let rangesTouched = 0;
 let radiosTouched = 0;
 let alertText = null;
-let dienuSkaicius;
-let temperatura;
+let dienuSkaicius = 1;
+let temperatura = -1;
 let arSkalbs;
 
 
