@@ -1,4 +1,7 @@
-console.log('print data debug 6');
+
+console.log('print data debug 7');
+
+function daiktuSkriptas(dienuSkaicius, temperatura, arSkalbs) {
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
@@ -6,6 +9,107 @@ let resultBlock = document.getElementsByClassName('has-result')[0];
 let rangesTouched = 0;
 let radiosTouched = 0;
 let alertText = null;
+
+let marskiniuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : 4;
+let kelniuSkaicius = dienuSkaicius < 4 ? 1 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : arSkalbs? 3 : 4;
+let megztiniuSkaicius = dienuSkaicius < 14 ? 1 : 2;
+let kelnaiciuSkaicius = arSkalbs? Math.trunc(dienuSkaicius * 0.6) < 1 ? 1 : Math.trunc(dienuSkaicius * 0.6) : dienuSkaicius;
+let liemeneliuSkaicius = arSkalbs? Math.trunc(dienuSkaicius * 0.6 * 0.8) < 1 ? 1 : Math.trunc(dienuSkaicius * 0.6) : Math.trunc(dienuSkaicius * 0.8) < 1 ? 1 : Math.trunc(dienuSkaicius * 0.8);
+let marskineliuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? arSkalbs? 2 : 3 : arSkalbs? 2 : 4;
+
+let rubai = [
+	//minusine tempa
+	{
+		'virsutiniai': ['Striukė | Paltas 1 vnt.', 'Megztinis | Flisinis džemperis '  + megztiniuSkaicius + ' vnt.', 'Marškiniai | palaidinė ilgomis rankovėmis ' + marskiniuSkaicius + ' vnt.', 'Termo apranga '  + megztiniuSkaicius + ' vnt.', 'Kelnės ' + kelniuSkaicius + ' vnt.', 'Sportinė | laisvalaikio apranga 1 vnt.'],
+	 'miego': ['Naktiniai | pižama 1 vnt.'],
+	 'apatiniai': ['Kelnaitės ' + kelnaiciuSkaicius + ' vnt.', 'Liemenėlė ' + liemeneliuSkaicius + ' vnt.', 'Marškinėliai ' + marskineliuSkaicius + ' vnt.', 'Kojinės ' + kelnaiciuSkaicius + ' vnt.'],
+	 'aksesuarai': ['Kepurė', 'Šalikas', 'Pirštinės', 'Rankinė | Delninė', 'Kuprinė', 'Papuošalai'],
+	 'avalyne': ['Šlepetės', 'Šilti batai']
+	},
+	//0 - 9
+	{
+		'virsutiniai': ['Striukė | Paltas 1 vnt.', 'Megztukas | Švarkas '  + megztiniuSkaicius + ' vnt.', 'Marškiniai | palaidinė ilgomis rankovėmis ' + marskiniuSkaicius + ' vnt.', 'Termo apranga '  + megztiniuSkaicius + ' vnt.', 'Kelnės ' + kelniuSkaicius + ' vnt.', 'Sportinė | laisvalaikio apranga 1 vnt.'],
+	 'miego': ['Naktiniai | pižama 1 vnt.'],
+	 'apatiniai': ['Kelnaitės ' + kelnaiciuSkaicius + ' vnt.', 'Liemenėlė ' + liemeneliuSkaicius + ' vnt.', 'Marškinėliai ' + marskineliuSkaicius + ' vnt.', 'Kojinės ' + kelnaiciuSkaicius + ' vnt.'],
+	 'aksesuarai': ['Kepurė', 'Šalikas', 'Pirštinės', 'Rankinė | Delninė', 'Kuprinė', 'Papuošalai'],
+	 'avalyne': ['Šlepetės', 'Sportiniai batai', 'Batai']
+	},
+	//10 - 15
+	{
+		'virsutiniai': ['Striukė | Paltas | Lietpaltis 1 vnt.', 'Megztukas | Švarkas '  + megztiniuSkaicius + ' vnt.', 'Marškiniai | palaidinė ilgomis rankovėmis ' + marskiniuSkaicius / 2 + ' vnt.', 'Marškiniai | palaidinė trumpomis rankovėmis '  + marskiniuSkaicius / 2 + ' vnt.', 'Kelnės | sijonas ' + kelniuSkaicius + ' vnt.', 'Suknelė 1 vnt.', 'Sportinė | laisvalaikio apranga 1 vnt.'],
+	 'miego': ['Naktiniai | pižama 1 vnt.'],
+	 'apatiniai': ['Kelnaitės ' + kelnaiciuSkaicius + ' vnt.', 'Liemenėlė ' + liemeneliuSkaicius + ' vnt.', 'Marškinėliai ' + marskineliuSkaicius + ' vnt.', 'Kojinės ' + kelnaiciuSkaicius + ' vnt.'],
+	 'aksesuarai': ['Šalikas | skara', 'Rankinė | Delninė', 'Kuprinė', 'Papuošalai'],
+	 'avalyne': ['Šlepetės', 'Sportiniai batai', 'Bateliai | batai']
+	},
+	//16 - 24
+	{
+		'virsutiniai': ['Lengvas lietpaltis 1 vnt.', 'Megztukas | Švarkas '  + megztiniuSkaicius + ' vnt.', 'Marškiniai | palaidinė trumpomis rankovėmis '  + marskiniuSkaicius + ' vnt.', 'Kelnės | šortai | sijonas ' + kelniuSkaicius + ' vnt.', 'Suknelė 1 vnt.', 'Sportinė | laisvalaikio apranga 1 vnt.', 'Maudymosi kostiumėlis 1 vnt.'],
+	 'miego': ['Naktiniai | pižama 1 vnt.'],
+	 'apatiniai': ['Kelnaitės ' + kelnaiciuSkaicius + ' vnt.', 'Liemenėlė ' + liemeneliuSkaicius + ' vnt.', 'Marškinėliai ' + marskineliuSkaicius + ' vnt.', 'Kojinės ' + kelnaiciuSkaicius + ' vnt.'],
+	 'aksesuarai': ['Skrybėlė | galvos apdangalas nuo saulės', 'Skara', 'Rankinė | Delninė', 'Kuprinė', 'Papuošalai'],
+	 'avalyne': ['Šlepetės', 'Basutės | sandalai', 'Bateliai']
+	},
+	//25 ir daugiau
+	{
+		'virsutiniai': ['Megztukas | Švarkas '  + megztiniuSkaicius + ' vnt.', 'Marškiniai | palaidinė trumpomis rankovėmis '  + marskiniuSkaicius + ' vnt.', 'Kelnės | šortai | sijonas ' + kelniuSkaicius + ' vnt.', 'Suknelė 1 vnt.', 'Sportinė | laisvalaikio apranga 1 vnt.', 'Maudymosi kostiumėlis 1 vnt.'],
+	 'miego': ['Naktiniai | pižama 1 vnt.'],
+	 'apatiniai': ['Kelnaitės ' + kelnaiciuSkaicius + ' vnt.', 'Liemenėlė ' + liemeneliuSkaicius + ' vnt.', 'Marškinėliai ' + marskineliuSkaicius + ' vnt.', 'Kojinės ' + kelnaiciuSkaicius + ' vnt.'],
+	 'aksesuarai': ['Skrybėlė | galvos apdangalas nuo saulės', 'Skara', 'Rankinė | Delninė', 'Kuprinė', 'Papuošalai'],
+	 'avalyne': ['Šlepetės', 'Basutės | sandalai', 'Bateliai']
+	}
+]
+
+let rubaiSarasui = temperatura < 0 ? rubai[0] : temperatura >= 0 || temperatura < 10 ? rubai[1] : temperatura >= 10 || temperatura < 16 ? rubai[2] : temperatura >= 16 || temperatura < 24 ? rubai[3] : rubai[4];
+
+let dokumentai = ['Asmens dokumentas (tapatybės kortelė | pasas)', 'Draudimas', 'Rezervacijų (viešbučių, pramogų, transporto ir pan.) dokumentai | duomenys', 'Vairuotojo pažymėjimas (jei aktualu)', 'Grynieji (vietos valiuta)', 'Banko kortelės'];
+
+let asmensHigiena = ['Dantų šepetėlis', 'Dantų pasta', 'Šampūnas', 'Kondicionierius', 'Kūno | veido prausiklis', 'Skustuvas', 'Kūno losjonas | kremas', 'Veido kremas', 'Dekoratyvinė kosmetika pagal poreikį', 'Pleistrai', 'Kvepalai', 'Plaukų šepetys', 'Gumytės ir segtukai plaukams', 'Apsauginis kremas nuo saulės'];
+
+
+function generuotiEilute(tekstas) {
+	return `<div><input type="checkbox" disabled><label id="rLabel">${tekstas}</label></div>`;
+}
+
+function generuotiSarasa(aprangosKategorija) {
+	let container = '';
+    for (let i = 0; i < aprangosKategorija.length; i++) {
+        container += generuotiEilute(aprangosKategorija[i]);
+	}
+	    for (let i = 0; i < 2; i++) {
+        container += generuotiEilute('................................................................');
+	}
+	
+    return container;
+}
+
+function generuotiRezultata() {
+	let rezultatuSarasas = 
+			`
+<div class="dont-print"></div>
+<div class="print-btn dont-print">
+<button type="button" style="background-color: #ffffff" id="custom-print-btn">
+<i class="bi bi-printer"></i>
+</button></div>
+<div>
+<div class="rHeader">APRANGA</div>
+<div>${generuotiSarasa(rubaiSarasui['virsutiniai'])}</div>
+<div>${generuotiSarasa(rubaiSarasui['miego'])}</div>
+<div>${generuotiSarasa(rubaiSarasui['apatiniai'])}</div>
+<div>${generuotiSarasa(rubaiSarasui['aksesuarai'])}</div>
+<div>${generuotiSarasa(rubaiSarasui['avalyne'])}</div>
+</div>
+
+<div class="rHeader">DOKUMENTAI</div>
+<div class="rHeader">ASMENS HIGIENA | MAKIAŽAS</div>
+<div class="rHeader">TECHNIKA</div>
+<div class="rHeader">KITA</div>
+<div class="rHeader">RANKINIS BAGAŽAS</div>
+
+			`
+return rezultatuSarasas;
+}
+
 
 let printBtn = `
 <div class="formbox__actions_btns"><div class="formbox__actions">
@@ -87,11 +191,11 @@ function printData() {
 	//newWin.close();
 }
 
-function generateAlert() {
-	alertText = inputsTouched() ? null : 'error';
+function generateAlertOrResult() {
+	alertText = inputsTouched() ? generuotiRezultata() : 'error';
 }
 
-function getAlert() {
+function getCalculationResult() {
 	return alertText;
 }
 
@@ -102,7 +206,7 @@ buttonGenerate.addEventListener("click", function(){
 	//e.stopPropagation();
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
-	generateAlert();
+	generateAlertOrResult();
 })
 
 let buttonPrint = document.getElementById('custom-print-btn');
@@ -121,3 +225,4 @@ buttonReset.addEventListener("click", function(e){
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ';
 })
+}
