@@ -218,13 +218,14 @@ buttonGenerate.addEventListener("click", function(){
 	generateAlertOrResult();
 })
 
-let buttonPrint = document.getElementById('custom-print-btn');
 
-if (buttonPrint) {
+
+function addPrintOption() {
 	document.getElementById('custom-print-btn').addEventListener('click', function() {
 		printData();
 	})
 }
+
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
 
