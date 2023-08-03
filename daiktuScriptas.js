@@ -1,4 +1,4 @@
-console.log('btn click');
+console.log('btn click prevent default');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
@@ -97,7 +97,8 @@ function getAlert() {
 
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 
-buttonGenerate.addEventListener("click", function(){
+buttonGenerate.addEventListener("click", function(e){
+	e.preventDefault();
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
 	generateAlert();
@@ -105,7 +106,9 @@ buttonGenerate.addEventListener("click", function(){
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
-	buttonReset.addEventListener("click", function(){
+
+buttonReset.addEventListener("click", function(e){
+	e.preventDefault();
 	resultBlock.setAttribute('id', 'is-hidden');
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ';
