@@ -54,7 +54,7 @@ let rubai = [
 	},
 	//25 ir daugiau
 	{
-		'virsutiniai': ['Megztukas | Švarkas '  + megztiniuSkaicius + ' vnt.', 'Marškiniai | palaidinė trumpomis rankovėmis '  + marskiniuSkaicius + ' vnt.', 'Kelnės | šortai | sijonas ' + kelniuSkaicius + ' vnt.', 'Suknelė 1 vnt.', 'Sportinė | laisvalaikio apranga 1 vnt.', 'Maudymosi kostiumėlis 1 vnt.'],
+	'virsutiniai': ['Megztukas | Švarkas '  + megztiniuSkaicius + ' vnt.', 'Marškiniai | palaidinė trumpomis rankovėmis '  + marskiniuSkaicius + ' vnt.', 'Kelnės | šortai | sijonas ' + kelniuSkaicius + ' vnt.', 'Suknelė 1 vnt.', 'Sportinė | laisvalaikio apranga 1 vnt.', 'Maudymosi kostiumėlis 1 vnt.'],
 	 'miego': ['Naktiniai | pižama 1 vnt.'],
 	 'apatiniai': ['Kelnaitės ' + kelnaiciuSkaicius + ' vnt.', 'Liemenėlė ' + liemeneliuSkaicius + ' vnt.', 'Marškinėliai ' + marskineliuSkaicius + ' vnt.', 'Kojinės ' + kelnaiciuSkaicius + ' vnt.'],
 	 'aksesuarai': ['Skrybėlė | galvos apdangalas nuo saulės', 'Skara', 'Rankinė | Delninė', 'Kuprinė', 'Papuošalai'],
@@ -73,10 +73,11 @@ function generuotiEilute(tekstas) {
 	return `<div><input type="checkbox" disabled><label id="rLabel">${tekstas}</label></div>`;
 }
 
-function generuotiSarasa(aprangosKategorija) {
+function generuotiSarasa(array) {
+	let daiktuKategorija = array[0]['virsutiniai'] ? [...rubaiSarasui['virsutiniai'], ...rubaiSarasui['miego'], ...rubaiSarasui['apatiniai'], ...rubaiSarasui['aksesuarai'], ...rubaiSarasui['avalyne']] : array;
 	let container = '';
-    for (let i = 0; i < aprangosKategorija.length; i++) {
-        container += generuotiEilute(aprangosKategorija[i]);
+    for (let i = 0; i < daiktuKategorija.length; i++) {
+        container += generuotiEilute(daiktuKategorija[i]);
 	}
 	    for (let i = 0; i < 2; i++) {
         container += generuotiEilute('................................................................');
