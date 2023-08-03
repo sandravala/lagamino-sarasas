@@ -105,7 +105,13 @@ buttonGenerate.addEventListener("click", function(){
 	generateAlert();
 })
 
-document.getElementById('custom-print-btn') ? document.getElementById('custom-print-btn').addEventListener('click', printData();) : 'no such element';
+let buttonPrint = document.getElementById('custom-print-btn');
+
+if (buttonPrint) {
+	document.getElementById('custom-print-btn').addEventListener('click', function() {
+		printData();
+	}
+}
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
 
