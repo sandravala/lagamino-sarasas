@@ -1,7 +1,4 @@
 console.log('print data debug 10');
-document.getElementById('calchub-13-0-js').setAttribute('type', 'module');
-import testFunction from 'https://sandravala.github.io/lagamino-sarasas/testScript.js';
-testFunction();
 
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
