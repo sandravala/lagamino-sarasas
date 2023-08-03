@@ -1,8 +1,10 @@
 console.log('alert');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
+let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
 let resultBlock = document.getElementsByClassName('has-result')[0];
-let touched = 0;
+let inputsTouched = 0;
+let radiosTouched = 0;
 let alertText = null;
 
 let printBtn = `
@@ -29,21 +31,27 @@ resultBlock.setAttribute('id', 'is-hidden');
 // cia istrinu result title, kad liktu tik saraso blokas
 deleteResultTitle();
 
-rangeInputs[0].addEventListener("input", function(){
+rangeInputs[0].addEventListener('input', function(){
 	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
 	titles[0].innerHTML = 'Atostogų trukmė: ' + value + ' d.';
-	touched = 1;
+	rangesTouched = 1;
 });
 
-rangeInputs[1].addEventListener("input", function(){
+rangeInputs[1].addEventListener('input', function(){
 	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : rangeInputs[1].value;
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
-	touched = 1;
+	rangesTouched = 1;
 });
 
+for (let i = 0; i < radioInputs.length; i++) {
+	radioInputs[i].addEventListener('change', function() {
+		radiosTouched = 1;
+	})
+}
 
-function rangesTouched() {
-	return !!touched;
+function inputsTouched() {
+	let allTouched = !!rangesTouched && !!radiosTouched;
+	return allTouched;
 }
 
 function printData() {
@@ -80,7 +88,7 @@ function printData() {
 }
 
 function generateAlert(checkboxTouched) {
-	alertText = rangesTouched() || checkboxTouched ? null : 'error';
+	alertText = inputsTouched() ? null : 'error';
 }
 
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
