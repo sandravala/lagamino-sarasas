@@ -100,8 +100,8 @@ let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
-	if (inputsTouched()) { 	document.getElementById('custom-print-btn').addEventListener('click', printData() ) }
 	generateAlert();
+	if (inputsTouched()) { 	document.getElementById('custom-print-btn').addEventListener('click', printData() ) }
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
