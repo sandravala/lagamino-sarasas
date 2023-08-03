@@ -1,4 +1,4 @@
-console.log('print data');
+console.log('print data debug');
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
 let titles = document.getElementsByClassName('formbox__title');
@@ -107,7 +107,10 @@ buttonGenerate.addEventListener("click", function(e){
 })
 
 if (inputsTouched()) {
-	document.getElementById('custom-print-btn').addEventListener('click', function() {
+	console.log('inputs touched');
+	document.getElementById('custom-print-btn').addEventListener('click', function(e) {
+		e.preventDefault();
+		console.log('print button addEventListener');
 		printData();
 	}) 
 }
