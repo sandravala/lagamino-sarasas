@@ -130,6 +130,12 @@ rangeInputs[0].addEventListener('input', function(){
 	let value = dienuSkaicius > 14 ? 'daugiau, nei 14' : dienuSkaicius;
 	titles[0].innerHTML = 'Atostogų trukmė: ' + value + ' d.';
 	rangesTouched = 1;
+	marskiniuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : 4;
+	kelniuSkaicius = dienuSkaicius < 4 ? 1 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : arSkalbs? 3 : 4;
+	megztiniuSkaicius = dienuSkaicius < 14 ? 1 : 2;
+	kelnaiciuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) : dienuSkaicius;
+	liemeneliuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) : Math.round(dienuSkaicius * 0.8);
+	marskineliuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? arSkalbs? 2 : 3 : arSkalbs? 2 : 4;
 });
 
 rangeInputs[1].addEventListener('input', function(){
@@ -137,12 +143,18 @@ rangeInputs[1].addEventListener('input', function(){
 	let value = temperatura > 25 ? 'daugiau, nei 25' : temperatura;
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
 	rangesTouched = 1;
+	rubaiSarasui = temperatura < 0 ? rubai[0] : temperatura >= 0 || temperatura < 10 ? rubai[1] : temperatura >= 10 || temperatura < 16 ? rubai[2] : temperatura >= 16 || temperatura < 24 ? rubai[3] : rubai[4];
+	
 });
 
 for (let i = 0; i < radioInputs.length; i++) {
 	radioInputs[i].addEventListener('change', function() {
 		arSkalbs = radioInputs[i].value;
 		radiosTouched = 1;
+		kelniuSkaicius = dienuSkaicius < 4 ? 1 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? 3 : arSkalbs? 3 : 4;
+		kelnaiciuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) : dienuSkaicius;
+		liemeneliuSkaicius = arSkalbs? Math.round(dienuSkaicius * 0.6) : Math.round(dienuSkaicius * 0.8);
+		marskineliuSkaicius = dienuSkaicius < 4 ? 2 : dienuSkaicius >= 4 & dienuSkaicius < 8 ? arSkalbs? 2 : 3 : arSkalbs? 2 : 4;
 	})
 }
 
