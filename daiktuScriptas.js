@@ -234,4 +234,4 @@ buttonReset.addEventListener("click", function(e){
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ';
 })
-}
+
