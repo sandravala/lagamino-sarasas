@@ -97,7 +97,7 @@ function getAlert() {
 
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 
-buttonGenerate.addEventListener("click", function(e){
+buttonGenerate.addEventListener("click", function(){
 	//e.preventDefault();
 	//e.stopPropagation();
 	resultBlock.removeAttribute('id');
@@ -106,7 +106,7 @@ buttonGenerate.addEventListener("click", function(e){
 
 	if (inputsTouched()) {
 	console.log('inputs touched');
-	document.getElementById('custom-print-btn').addEventListener('click', function(e) {
+	document.getElementById('custom-print-btn').addEventListener('click', function() {
 		//e.preventDefault();
 		console.log('print button addEventListener');
 		printData();
