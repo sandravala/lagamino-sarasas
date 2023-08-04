@@ -69,7 +69,7 @@ function printData() {
 	newWin.document.write(newHead);
 	newWin.document.write(dataToPrint.outerHTML);
 	newWin.document.write('</body></html>');
-	window.print();
+	newWin.document.print();
 	window.onload = function(){
 	newWin.print();
 	newWin.close();
