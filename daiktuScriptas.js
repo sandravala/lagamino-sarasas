@@ -99,3 +99,18 @@ buttonReset.addEventListener("click", function(e){
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra: ';
 })
+
+function handleScroll() {
+var buttonDiv = document.getElementById('print-btn-div');
+var pageYOffset = window.pageYOffset;
+
+// If the pageYOffset is larger than 300, add the "hidden" class to the button
+if (pageYOffset > 300) {
+buttonDiv.classList.remove('is-hidden');
+} else {
+buttonDiv.classList.add('is-hidden');
+}
+}
+
+// Add the scroll event listener to the window object
+window.addEventListener('scroll', handleScroll);
