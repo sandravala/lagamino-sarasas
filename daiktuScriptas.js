@@ -19,20 +19,19 @@ resultBlock.setAttribute('id', 'is-hidden');
 deleteResultTitle();
 
 rangeInputs[0].addEventListener('input', function(){
-	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : dienuSkaicius;
+	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
 	titles[0].innerHTML = 'Atostogų trukmė: ' + value + ' d.';
 	rangesTouched = 1;
 });
 
 rangeInputs[1].addEventListener('input', function(){
-	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : temperatura;
+	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : rangeInputs[1].value;
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
 	rangesTouched = 1;
 });
 
 for (let i = 0; i < radioInputs.length; i++) {
 	radioInputs[i].addEventListener('change', function() {
-		arSkalbs = radioInputs[i].value;
 		radiosTouched = 1;
 	})
 }
@@ -96,8 +95,9 @@ buttonGenerate.addEventListener("click", function(){
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
 buttonReset.addEventListener("click", function(e){
-	e.preventDefault();
-	resultBlock.setAttribute('id', 'is-hidden');
-	titles[0].innerHTML = 'Atostogų trukmė: ';
-	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ';
+	// e.preventDefault();
+	// resultBlock.setAttribute('id', 'is-hidden');
+	// titles[0].innerHTML = 'Atostogų trukmė: ';
+	// titles[1].innerHTML = 'Vidutinė temperatūra: ';
+	location.reload();
 })
