@@ -66,6 +66,7 @@ function printData() {
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
 	newWin.document.write(dataToPrint.outerHTML);
+	newWin.document.write('<script type="text/javascript">addEventListener("load", () => { print(); close(); })</script>');
 	newWin.document.write('</body></html>');
 	//newWin.print();
 	//newWin.close();
