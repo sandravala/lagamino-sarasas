@@ -54,6 +54,14 @@
     font-size: .8em;
 }
 
+/* result block get this id*/
+#is-hidden {
+        display: none;
+        visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
 .is-hidden {
         display: none;
         visibility: hidden;
