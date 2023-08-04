@@ -69,8 +69,8 @@ function printData() {
 	newWin.document.write(newHead);
 	newWin.document.write(dataToPrint.outerHTML);
 	newWin.document.write('</body></html>');
-	//newWin.print();
-	//newWin.close();
+	newWin.print();
+	newWin.close();
 }
 
 function generateAlertOrResult() {
