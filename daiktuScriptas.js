@@ -99,5 +99,5 @@ buttonReset.addEventListener("click", function(e){
 	// resultBlock.setAttribute('id', 'is-hidden');
 	// titles[0].innerHTML = 'Atostogų trukmė: ';
 	// titles[1].innerHTML = 'Vidutinė temperatūra: ';
-	location.reload();
+	// location.reload();
 })
