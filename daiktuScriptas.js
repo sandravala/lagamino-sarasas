@@ -39,7 +39,8 @@ function inputsTouched() {
 	return allTouched;
 }
 
-function printData(generatePDF) {
+function printData() {
+
 	const newHead = 
 		`<head>
 		<!-- Metadata -->
@@ -64,6 +65,8 @@ function printData(generatePDF) {
 	const dataToPrint = document.getElementById('for-printing');
 
 	const url = location.protocol + '//' + location.host + location.pathname;
+
+	if(window.open) {
 	newWin = window.open(url, "_blank");
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
@@ -73,6 +76,9 @@ function printData(generatePDF) {
 		newWin.print();
 		newWin.close();
 	}, 100);
+	} else {
+		window.print();
+	}
 
 	// window.onload = function(){
 	// newWin.print();
