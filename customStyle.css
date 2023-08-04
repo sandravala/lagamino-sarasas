@@ -79,4 +79,11 @@
     }
 }
 
-
+.rHeader {
+    margin-bottom: 0.7em;
+    margin-top: 0.7em;
+    font-weight: 800;
+    background-color: #ededed;
+    padding-top: 0.2em;
+    text-align: center;
+}
