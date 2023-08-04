@@ -53,6 +53,8 @@ function printData() {
 		<link rel="stylesheet" href="https://www.12gm.lt/wp-content/plugins/calculator-builder/assets/css/calchub-min.css?ver=1.5.2" type="text/css" media="all">
 		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/customStyle.css?ver=1.5.2" media="all">
 		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/printStyle.css?ver=1" media="all">
+		
+  		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/printerStyles.css?ver=1" media="print">
 		</head>
 	  		<body>
 	    		<div class="site-branding" style="text-align: center">
@@ -66,7 +68,6 @@ function printData() {
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
 	newWin.document.write(dataToPrint.outerHTML);
-	newWin.document.write('<script type="text/javascript">addEventListener("load", () => { print(); close(); })</script>');
 	newWin.document.write('</body></html>');
 	//newWin.print();
 	//newWin.close();
