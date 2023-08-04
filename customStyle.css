@@ -54,12 +54,12 @@
     font-size: .8em;
 }
 
-#is-hidden {
+.is-hidden {
         display: none;
         visibility: hidden;
     width: 0;
     height: 0;
-    }
+}
 
 .formbox__btn button:not(:hover):not(:active).formbox__btn-calc {
     border-color: #071927;
