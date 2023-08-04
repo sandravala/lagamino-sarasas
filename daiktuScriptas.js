@@ -19,15 +19,13 @@ resultBlock.setAttribute('id', 'is-hidden');
 deleteResultTitle();
 
 rangeInputs[0].addEventListener('input', function(){
-	dienuSkaicius = rangeInputs[0].value;
-	let value = dienuSkaicius > 14 ? 'daugiau, nei 14' : dienuSkaicius;
+	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : dienuSkaicius;
 	titles[0].innerHTML = 'Atostogų trukmė: ' + value + ' d.';
 	rangesTouched = 1;
 });
 
 rangeInputs[1].addEventListener('input', function(){
-	temperatura = rangeInputs[1].value;
-	let value = temperatura > 25 ? 'daugiau, nei 25' : temperatura;
+	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : temperatura;
 	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
 	rangesTouched = 1;
 });
