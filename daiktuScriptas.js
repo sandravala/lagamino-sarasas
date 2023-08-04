@@ -71,7 +71,7 @@ function printData() {
 	newWin.document.write('</body></html>');
 	setTimeout(function() {
 		newWin.print();
-	}, 600);
+	}, 300);
 	window.onload = function(){
 	newWin.print();
 	newWin.close();
