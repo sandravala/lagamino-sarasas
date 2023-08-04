@@ -18,7 +18,7 @@ function generuotiEilute(tekstas) {
 }
 
 function generuotiSarasa(array) {
-	let daiktuKategorija = array['virsutiniai'] ? [...rubaiSarasui['virsutiniai'], ...rubaiSarasui['miego'], ...rubaiSarasui['apatiniai'], ...rubaiSarasui['aksesuarai'], ...rubaiSarasui['avalyne']] : array;
+	let daiktuKategorija = array['virsutiniai'] ? [...array['virsutiniai'], ...array['miego'], ...array['apatiniai'], ...array['aksesuarai'], ...array['avalyne']] : array;
 	let container = '';
     for (let i = 0; i < daiktuKategorija.length; i++) {
         container += generuotiEilute(daiktuKategorija[i]);
