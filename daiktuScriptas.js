@@ -105,7 +105,7 @@ var buttonDiv = document.getElementById('print-btn-div');
 var pageYOffset = window.pageYOffset;
 
 // If the pageYOffset is larger than 300, add the "hidden" class to the button
-if (pageYOffset > 300) {
+if ( buttonDiv && pageYOffset > 300) {
 buttonDiv.classList.remove('is-hidden');
 } else {
 buttonDiv.classList.add('is-hidden');
