@@ -20,13 +20,13 @@ deleteResultTitle();
 
 rangeInputs[0].addEventListener('input', function(){
 	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
-	titles[0].innerHTML = 'Atostogų trukmė: ' + value + ' d.';
+	titles[0].innerHTML = 'Atostogų trukmė: <span class="formbox__field-alert">' + value + ' d.</span>';
 	rangesTouched = 1;
 });
 
 rangeInputs[1].addEventListener('input', function(){
 	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : rangeInputs[1].value;
-	titles[1].innerHTML = 'Vidutinė temperatūra viešnagės metu: ' + value + '°C';
+	titles[1].innerHTML = 'Vidutinė temperatūra: <span class="formbox__field-alert">' + value + '°C</span>';
 	rangesTouched = 1;
 });
 
@@ -95,9 +95,7 @@ buttonGenerate.addEventListener("click", function(){
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
 buttonReset.addEventListener("click", function(e){
-	// e.preventDefault();
 	// resultBlock.setAttribute('id', 'is-hidden');
-	// titles[0].innerHTML = 'Atostogų trukmė: ';
-	// titles[1].innerHTML = 'Vidutinė temperatūra: ';
-	// location.reload();
+	titles[0].innerHTML = 'Atostogų trukmė: ';
+	titles[1].innerHTML = 'Vidutinė temperatūra: ';
 })
