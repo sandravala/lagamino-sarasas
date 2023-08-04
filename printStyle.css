@@ -50,3 +50,8 @@ input[type="checkbox"] {
 .result-grid-column {
     grid-row: 2 / 5;
 }
+
+body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
