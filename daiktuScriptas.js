@@ -72,7 +72,7 @@ function printData() {
 	setTimeout(function() {
 		newWin.print();
 		newWin.close();
-	}, 50);
+	}, 100);
 	// window.onload = function(){
 	// newWin.print();
 	// newWin.close();
