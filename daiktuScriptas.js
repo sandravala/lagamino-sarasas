@@ -1,4 +1,4 @@
-console.log('print data debug 12');
+console.log('print data debug 13');
 
 let rangeInputs = document.getElementsByClassName('formbox__field-range');
 let radioInputs = document.querySelectorAll('input[type=radio]');
@@ -195,16 +195,15 @@ function getAlert() {
 }
 	
 function getCalculationResult() {
-	return alertText === null ? generuotiRezultata() : alertText;
+	return alertText === null ? '' : alertText;
 }
 
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
-	//e.preventDefault();
-	//e.stopPropagation();
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
 	generateAlertOrResult();
+	document.getElementsByClassName('formbox__htmlBlock-result')[0].innerHTML = generuotiRezultata();
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
