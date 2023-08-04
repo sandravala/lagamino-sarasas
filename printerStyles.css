@@ -10,6 +10,10 @@ body {
   font-weight: 400;
 }
 
+.onlyPrint {
+    display: none;
+}
+
 .site-branding {
     text-align: center;
     width: 1074px;
