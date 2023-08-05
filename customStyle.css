@@ -98,7 +98,7 @@
 
   /* Define the print style for the section with ID "printSection" */
   @media print {
-    body * {
+    body *:not(#resultList) {
         display: none;
     }
     #resultList,
