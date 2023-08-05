@@ -130,7 +130,7 @@ function printData() {
 	newWin.document.write('</body></html>');
 	setTimeout(function() {
 		newWin.print();
-		newWin.close();
+		//newWin.close();
 	}, 100);
 	} else {
 		window.print();
