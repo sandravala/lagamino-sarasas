@@ -65,28 +65,37 @@ function generuotiSarasa(array) {
 function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika, rankinisBagazas) {
 	
 	let result = 
-	`<div class="formbox for-printing" id="resultList">
-		<div class="result-grid-column">
-		<div class="rHeader">APRANGA</div>
-		<div>${generuotiSarasa(rubaiSarasui)}</div>
-		<div class="rHeader">KITA</div>
-		<div>${generuotiSarasa(kita)}</div>
+	`<div class="formbox formbox__container has-result">
+		<div class="formbox__body">
+		  	<div class="formbox__field is-result">
+			    	<div class="formbox__htmlBlock-result">
+				     	<div class="for-printing" id="resultList">
+						<div class="result-grid-column">
+							<div class="rHeader">APRANGA</div>
+							<div>${generuotiSarasa(rubaiSarasui)}</div>
+							<div class="rHeader">KITA</div>
+							<div>${generuotiSarasa(kita)}</div>
+						</div>
+						<div class="result-grid-column">
+							<div class="rHeader">DOKUMENTAI</div>
+							<div>${generuotiSarasa(dokumentai)}</div>
+							<div class="rHeader">ASMENS HIGIENA | MAKIAŽAS</div>
+							<div>${generuotiSarasa(asmensHigiena)}</div>
+						</div>
+						<div class="result-grid-column">
+							<div class="rHeader">TECHNIKA</div>
+							<div>${generuotiSarasa(technika)}</div>
+							<div class="rHeader">RANKINIS BAGAŽAS</div>
+							<div>${generuotiSarasa(rankinisBagazas)}</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
+ 
 
-		<div class="result-grid-column">
-		<div class="rHeader">DOKUMENTAI</div>
-		<div>${generuotiSarasa(dokumentai)}</div>
-		<div class="rHeader">ASMENS HIGIENA | MAKIAŽAS</div>
-		<div>${generuotiSarasa(asmensHigiena)}</div>
-		</div>
-
-		<div class="result-grid-column">
-		<div class="rHeader">TECHNIKA</div>
-		<div>${generuotiSarasa(technika)}</div>
-		<div class="rHeader">RANKINIS BAGAŽAS</div>
-		<div>${generuotiSarasa(rankinisBagazas)}</div>
-		</div>
-	  </div>`;
+`;
 	
 	return result;
 }
