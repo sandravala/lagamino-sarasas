@@ -75,10 +75,10 @@ function generuotiSarasa(array) {
 function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika, rankinisBagazas) {
 	
 	let result = 
-	`<div class="formbox formbox__container has-result">
+	`<div class="formbox formbox__container has-result" id="resultList">
 		<div class="formbox__body">
 		  	<div class="formbox__field is-result">
-			    	<div class="formbox__htmlBlock-result for-printing" id="resultList">
+			    	<div class="formbox__htmlBlock-result for-printing">
 					<div class="result-grid-column">
 						<div class="rHeader">APRANGA</div>
 						<div>${generuotiSarasa(rubaiSarasui)}</div>
