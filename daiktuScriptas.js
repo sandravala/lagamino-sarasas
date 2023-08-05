@@ -5,12 +5,15 @@ let resultBlock = document.getElementsByClassName('has-result')[0];
 let rangesTouched = 0;
 let radiosTouched = 0;
 let alertText = null;
-let resultElement = document.getElementById('resultList');
 
 function removeElement(element) {
     if (element) {
         element.remove();
     }
+}
+
+function getResultElement() {
+	return document.getElementById('resultList');
 }
 
 function deleteResultTitle() {
@@ -27,20 +30,20 @@ rangeInputs[0].addEventListener('input', function(){
 	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
 	titles[0].innerHTML = 'Atostogų trukmė: <span class="formbox__field-alert">' + value + ' d.</span>';
 	rangesTouched = 1;
-	removeElement(resultElement);
+	removeElement(getResultElement());
 });
 
 rangeInputs[1].addEventListener('input', function(){
 	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : rangeInputs[1].value;
 	titles[1].innerHTML = 'Vidutinė temperatūra: <span class="formbox__field-alert">' + value + '°C</span>';
 	rangesTouched = 1;
-	removeElement(resultElement);
+	removeElement(getResultElement());
 });
 
 for (let i = 0; i < radioInputs.length; i++) {
 	radioInputs[i].addEventListener('change', function() {
 		radiosTouched = 1;
-		removeElement(resultElement);
+		removeElement(getResultElement());
 	})
 }
 
@@ -187,7 +190,7 @@ buttonReset.addEventListener("click", function(e){
 	// resultBlock.setAttribute('id', 'is-hidden');
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra: ';
-	removeElement(resultElement);
+	removeElement(getResultElement());
 })
 
 function handleScroll() {
