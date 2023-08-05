@@ -5,6 +5,13 @@ let resultBlock = document.getElementsByClassName('has-result')[0];
 let rangesTouched = 0;
 let radiosTouched = 0;
 let alertText = null;
+let resultElement = document.getElementById('resultList');
+
+function removeElement(element) {
+    if (element) {
+        element.remove();
+    }
+}
 
 function deleteResultTitle() {
 	document.querySelectorAll('.formbox__container.has-result')[0].removeChild(document.querySelectorAll('.formbox__container.has-result')[0].firstChild);
@@ -20,17 +27,20 @@ rangeInputs[0].addEventListener('input', function(){
 	let value = rangeInputs[0].value > 14 ? 'daugiau, nei 14' : rangeInputs[0].value;
 	titles[0].innerHTML = 'Atostogų trukmė: <span class="formbox__field-alert">' + value + ' d.</span>';
 	rangesTouched = 1;
+	removeElement(resultElement);
 });
 
 rangeInputs[1].addEventListener('input', function(){
 	let value = rangeInputs[1].value > 25 ? 'daugiau, nei 25' : rangeInputs[1].value;
 	titles[1].innerHTML = 'Vidutinė temperatūra: <span class="formbox__field-alert">' + value + '°C</span>';
 	rangesTouched = 1;
+	removeElement(resultElement);
 });
 
 for (let i = 0; i < radioInputs.length; i++) {
 	radioInputs[i].addEventListener('change', function() {
 		radiosTouched = 1;
+		removeElement(resultElement);
 	})
 }
 
@@ -94,6 +104,8 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
 	
 	return result;
 }
+
+
 
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
@@ -168,13 +180,6 @@ let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 	generateAlertOrResult();
 	resultBlock.removeAttribute('id');
-
-	let resultList = document.getElementById('resultList');
-	if(resultList) {
-		resultList.classList.remove('is-hidden');
-		resultList.classList.add('for-printing');
-	}
-
 })
 
 let buttonReset = document.getElementsByClassName('formbox__btn-reset')[0];
@@ -182,7 +187,7 @@ buttonReset.addEventListener("click", function(e){
 	// resultBlock.setAttribute('id', 'is-hidden');
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra: ';
-	document.getElementById('resultList').classList.add('is-hidden');
+	removeElement(resultElement);
 })
 
 function handleScroll() {
