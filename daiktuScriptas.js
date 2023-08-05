@@ -140,8 +140,7 @@ function printData() {
 }
 
 function generateAlertOrResult() {
-	alertText = inputsTouched() ?  null : 'error';
-	
+	alertText = inputsTouched() ?  '' : 'error';
 }
 
 function getAlert() {
