@@ -122,20 +122,37 @@ function printData() {
 
 	const url = location.protocol + '//' + location.host + location.pathname;
 
-	if(window.open) {
+	// if(window.open) {
+	// newWin = window.open(url, "_blank");
+	// newWin.document.write('<html lang="lt-LT">');
+	// newWin.document.write(newHead);
+	// newWin.document.write(dataToPrint.outerHTML);
+	// newWin.document.write('</body></html>');
+	// setTimeout(function() {
+	// 	newWin.print();
+	// 	//newWin.close();
+	// }, 100);
+	// } else {
+	// 	window.print();
+	// }
+
 	newWin = window.open(url, "_blank");
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
 	newWin.document.write(dataToPrint.outerHTML);
 	newWin.document.write('</body></html>');
-	setTimeout(function() {
+	
+	if (document.readyState == 'complete') {
 		newWin.print();
 		//newWin.close();
-	}, 100);
+	  
 	} else {
-		window.print();
+	  document.addEventListener('load', () => {
+		  newWin.print();
+		//newWin.close();
+	  });
 	}
-
+	
 	// window.onload = function(){
 	// newWin.print();
 	// newWin.close();
