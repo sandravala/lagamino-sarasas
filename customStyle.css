@@ -96,7 +96,6 @@
     text-align: center;
 }
 
-<style>
   /* Define the print style for the section with ID "printSection" */
   @media print {
     body * {
@@ -106,4 +105,3 @@
       display: block; /* Show the section with ID "printSection" */
     }
   }
-</style>
