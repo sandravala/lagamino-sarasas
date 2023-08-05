@@ -129,3 +129,13 @@ input[type="checkbox"] {
     vertical-align: top;
 }
 
+  @media print {
+    body *:not(#resultList) {
+        display: none;
+    }
+    #resultList,
+    #resultList * {
+        display: block;
+    }
+  }
+
