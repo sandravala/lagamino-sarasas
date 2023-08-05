@@ -39,6 +39,59 @@ function inputsTouched() {
 	return allTouched;
 }
 
+
+  function getFirstWord(str) {
+    // Split the string by whitespace characters and get the first element
+    const wordsArray = str.trim().split(/\s+/);
+    return wordsArray[0];
+  }
+
+function generuotiEilute(tekstas) {
+	return `<div><input type="checkbox" id="${getFirstWord(tekstas)}"><label id="rLabel" for="${getFirstWord(tekstas)}">${tekstas}</label></div>`;
+}
+
+function generuotiSarasa(array) {
+	let daiktuKategorija = array['virsutiniai'] ? [...array['virsutiniai'], ...array['miego'], ...array['apatiniai'], ...array['aksesuarai'], ...array['avalyne']] : array;
+	let container = '';
+    for (let i = 0; i < daiktuKategorija.length; i++) {
+        container += generuotiEilute(daiktuKategorija[i]);
+	}
+	    for (let i = 0; i < 2; i++) {
+        container += generuotiEilute('................................................................');
+	}
+	
+    return container;
+}
+
+function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika, rankinisBagazas) {
+	
+	let result = 
+	`<div class="formbox is-hidden" id="resultList">
+		<div class="result-grid-column">
+		<div class="rHeader">APRANGA</div>
+		<div>${generuotiSarasa(rubaiSarasui)}</div>
+		<div class="rHeader">KITA</div>
+		<div>${generuotiSarasa(kita)}</div>
+		</div>
+
+		<div class="result-grid-column">
+		<div class="rHeader">DOKUMENTAI</div>
+		<div>${generuotiSarasa(dokumentai)}</div>
+		<div class="rHeader">ASMENS HIGIENA | MAKIAŽAS</div>
+		<div>${generuotiSarasa(asmensHigiena)}</div>
+		</div>
+
+		<div class="result-grid-column">
+		<div class="rHeader">TECHNIKA</div>
+		<div>${generuotiSarasa(technika)}</div>
+		<div class="rHeader">RANKINIS BAGAŽAS</div>
+		<div>${generuotiSarasa(rankinisBagazas)}</div>
+		</div>
+	  </div>`;
+	
+	return result;
+}
+
 function printData() {
 
 	const newHead = 
@@ -88,6 +141,7 @@ function printData() {
 
 function generateAlertOrResult() {
 	alertText = inputsTouched() ?  null : 'error';
+	
 }
 
 function getAlert() {
@@ -102,6 +156,7 @@ let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 	resultBlock.removeAttribute('id');
 	resultBlock.setAttribute('id', 'for-printing');
+	document.getElementById('resultList').classList.remove('is-hidden');
 	generateAlertOrResult();
 })
 
@@ -110,6 +165,7 @@ buttonReset.addEventListener("click", function(e){
 	// resultBlock.setAttribute('id', 'is-hidden');
 	titles[0].innerHTML = 'Atostogų trukmė: ';
 	titles[1].innerHTML = 'Vidutinė temperatūra: ';
+	document.getElementById('resultList').classList.add('is-hidden');
 })
 
 function handleScroll() {
@@ -118,13 +174,11 @@ var pageYOffset = window.pageYOffset;
 
 // If the pageYOffset is larger than 300, add the "hidden" class to the button
 if (buttonDiv) {
-if ( pageYOffset > 300) {
-buttonDiv.classList.remove('is-hidden');
-} else {
-buttonDiv.classList.add('is-hidden');
-}
-}
-}
+	if ( pageYOffset > 300) {
+	buttonDiv.classList.remove('is-hidden');
+	} else {
+	buttonDiv.classList.add('is-hidden');
+}}}
 
 // Add the scroll event listener to the window object
 window.addEventListener('scroll', handleScroll);
