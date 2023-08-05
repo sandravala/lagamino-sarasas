@@ -99,9 +99,9 @@
   /* Define the print style for the section with ID "printSection" */
   @media print {
     body * {
-      display: none; /* Hide everything by default */
+        visibility: hidden;
     }
     #resultList {
-      display: block; /* Show the section with ID "printSection" */
+        visibility: visible;
     }
   }
