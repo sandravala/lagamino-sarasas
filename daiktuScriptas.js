@@ -9,6 +9,7 @@ let alertText = null;
 function removeElement(element) {
     if (element) {
         element.remove();
+	    console.log('istrinta!');
     }
 }
 
