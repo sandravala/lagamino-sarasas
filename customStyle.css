@@ -95,14 +95,3 @@
     padding-top: 0.2em;
     text-align: center;
 }
-
-  /* Define the print style for the section with ID "printSection" */
-  @media print {
-    body *:not(#resultList) {
-        display: none;
-    }
-    #resultList,
-    #resultList * {
-        display: block;
-    }
-  }
