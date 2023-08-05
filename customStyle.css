@@ -101,7 +101,7 @@
     body * {
       display: none; /* Hide everything by default */
     }
-    #for-printing {
+    #resultList {
       display: block; /* Show the section with ID "printSection" */
     }
   }
