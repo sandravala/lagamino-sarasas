@@ -38,20 +38,8 @@ function inputsTouched() {
 	let allTouched = !!rangesTouched && !!radiosTouched;
 	return allTouched;
 }
-
-function insertStylesheet(href) {
-    const linkElement = document.createElement("link");
-    linkElement.rel = 'stylesheet';
-    linkElement.type = 'text/css';
-    linkElement.href = href;
-    linkElement.media = 'print';
-
-    document.head.appendChild(linkElement);
-  }
-
-insertStylesheet('https://sandravala.github.io/lagamino-sarasas/printerStyles.css');
 		 
-  function getFirstWord(str) {
+function getFirstWord(str) {
     // Split the string by whitespace characters and get the first element
     const wordsArray = str.trim().split(/\s+/);
     return wordsArray[0];
