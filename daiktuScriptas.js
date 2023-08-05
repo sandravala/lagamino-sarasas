@@ -193,6 +193,7 @@ buttonReset.addEventListener("click", function(e){
 	titles[1].innerHTML = 'Vidutinė temperatūra: ';
 	removeElement(getResultElement());
 	alertText = null;
+	!inputsTouched();
 })
 
 function handleScroll() {
