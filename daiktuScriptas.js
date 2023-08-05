@@ -113,6 +113,7 @@ function printData() {
 		<title>Kelionės daiktų sąrašas</title>
 
     		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/printerStyles.css?ver=1" media="print">
+    		<link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/printerStyles.css?ver=1" media="all">
 		</head>
 	  		<body>
 	    		<div class="site-branding" style="text-align: center">
@@ -143,21 +144,12 @@ function printData() {
 	newWin.document.write(dataToPrint.outerHTML);
 	newWin.document.write('</body></html>');
 	
-	if (document.readyState == 'complete') {
-		newWin.print();
-		//newWin.close();
-	  
-	} else {
-	  document.addEventListener('load', () => {
-		  newWin.print();
-		//newWin.close();
-	  });
-	}
+	window.onload = () => {
+	  // Perform the printing action once everything has loaded.
+	  newWin.print();
+	  //newWin.close();
+	};
 	
-	// window.onload = function(){
-	// newWin.print();
-	// newWin.close();
-	// }
 }
 
 function generateAlertOrResult() {
