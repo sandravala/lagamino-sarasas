@@ -61,7 +61,7 @@ const deleteIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="1
   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 </svg>`;
 
-const addListItemInput = `<div class="is-hidden">
+const addListItemInput = `<div class="add-list-item-input is-hidden">
  			<input type="text" class="dont-print">
 				<button type="button" class="listBtn plusButton dont-print" style="background-color: #ffffff; color: #1c7f18; border: none;">
     					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 12 12">
@@ -153,6 +153,25 @@ function removeListItemIfMinusBtnClicked() {
 	minusButtons.forEach(btn => {
 		btn.addEventListener('click', function() {
 			btn.parentNode.remove();
+		});
+		
+	});
+}
+
+function showAddListItemInput() {
+	const addButtons = document.querySelectorAll('.addButton');
+	const addInputs = document.querySelectorAll('.add-list-item-input');
+	
+	addButtons.forEach(btn => {
+		btn.addEventListener('click', function() {
+			addInputs.forEach(addInput => {
+				if (addInput.classList.contains('is-hidden')) {
+					addInput.classList.remove('is-hidden'); 
+					btn.innerHTML = 'Išsaugoti';
+				} else {
+					addInput.classList.add('is-hidden');
+					btn.innerHTML = 'Pridėti';
+				}
 		});
 		
 	});
