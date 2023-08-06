@@ -179,4 +179,5 @@ input[type="text"] {
     padding-left: 6px;
     border-color: #ebeaea;
     width: 20em;
+border-radius: 6px;
 }
