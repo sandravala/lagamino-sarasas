@@ -207,11 +207,10 @@ function printData() {
 	newWin.document.write(dataToPrint.outerHTML);
 	newWin.document.write('</body></html>');
 	
-	window.onload = () => {
-	  // Perform the printing action once everything has loaded.
-	  newWin.print();
-	  //newWin.close();
-	};
+	setTimeout(function() {
+		newWin.print();
+		//newWin.close();
+	}, 100);
 	
 }
 
