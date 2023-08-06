@@ -176,10 +176,11 @@
 input[type="text"] {
     min-height: 1em;
     padding: 0;
-    padding-left: 6px;
+    padding-left: .4em;
     border-color: #ebeaea;
     width: 20em;
-border-radius: 6px;
+	border-radius: .4em;
+	margin: 0.1em;
 }
 
 .add-list-item-input {
