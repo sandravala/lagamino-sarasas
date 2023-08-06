@@ -171,3 +171,10 @@
 	top:1px;
 }
 
+input[type="text"] {
+    min-height: 1em;
+    padding: 0;
+    padding-left: 6px;
+    border-color: #ebeaea;
+    width: 20em;
+}
