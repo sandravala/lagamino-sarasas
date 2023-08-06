@@ -9,7 +9,6 @@ let alertText = null;
 function removeElement(element) {
     if (element) {
         element.remove();
-	    console.log('istrinta!');
     }
 }
 
@@ -54,23 +53,22 @@ function inputsTouched() {
 }
 		 
 function getFirstWord(str) {
-    // Split the string by whitespace characters and get the first element
-    const wordsArray = str.trim().split(/\s+/);
+const wordsArray = str == '................................................................' ? ['blank'] : str.trim().split(/\s+/);
     return wordsArray[0];
   }
 
-function generuotiEilute(tekstas) {
-	return `<div><input type="checkbox" id="${getFirstWord(tekstas)}"><label id="rLabel" for="${getFirstWord(tekstas)}">${tekstas}</label></div>`;
+function generuotiEilute(tekstas, i) {
+	return `<div><input type="checkbox" id="${getFirstWord(tekstas) + i}" class="myCheckbox"><label id="rLabel" for="${getFirstWord(tekstas) + i}">${tekstas}</label></div>`;
 }
 
 function generuotiSarasa(array) {
 	let daiktuKategorija = array['virsutiniai'] ? [...array['virsutiniai'], ...array['miego'], ...array['apatiniai'], ...array['aksesuarai'], ...array['avalyne']] : array;
 	let container = '';
     for (let i = 0; i < daiktuKategorija.length; i++) {
-        container += generuotiEilute(daiktuKategorija[i]);
+        container += generuotiEilute(daiktuKategorija[i], i);
 	}
 	    for (let i = 0; i < 2; i++) {
-        container += generuotiEilute('................................................................');
+        container += generuotiEilute('................................................................', i);
 	}
 	
     return container;
@@ -109,7 +107,24 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
 	return result;
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+const labels = document.querySelectorAll("label[for][id='rLabel']");
 
+	labels.forEach(label => {
+		const checkboxId = label.getAttribute("for");
+		const checkbox = document.getElementById(checkboxId);
+	
+		if (checkbox) {
+		checkbox.addEventListener("change", function() {
+		        if (checkbox.checked) {
+		          label.classList.add("strikethrough");
+		        } else {
+		          label.classList.remove("strikethrough");
+		        }
+		      });
+		    }
+	});
+});
 
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
