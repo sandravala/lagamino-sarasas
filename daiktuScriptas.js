@@ -104,7 +104,7 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
 						<div>${generuotiSarasa(rubaiSarasui)}</div>
 					</div>
 					<div class="result-grid-column">
-						<div class="rHeader">ASMENS HIGIENA | MAKIAŽAS</div>
+						<div class="rHeader">ASMENS HIGIENA</div>
 						<div>${generuotiSarasa(asmensHigiena)}</div>
 					</div>
      					<div class="result-grid-column">
