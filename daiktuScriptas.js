@@ -149,7 +149,7 @@ function strikethroughLabelsIfChecked() {
 
 function removeListItemIfMinusBtnClicked(minusButtons) {
 	//const minusButtons = document.querySelectorAll('.minusButton');
-
+	minusButtons.length > 1 ? console.log([minusButtons[0]) : null;
 	minusButtons.forEach(btn => {
 		btn.addEventListener('click', function() {
 			btn.parentNode.remove();
@@ -189,7 +189,7 @@ function addListItemOnClick() {
 				divOfAddInput.insertAdjacentHTML('beforebegin', newListItem);
 				let arr = [];
 				arr.push(divOfAddInput.previousSibling.lastChild);
-				
+				console.log(arr[0] ? arr[0] : 'no such element');
 				removeListItemIfMinusBtnClicked(arr);
 			} 
 		});
