@@ -53,7 +53,7 @@ function inputsTouched() {
 }
 		 
 function getFirstWord(str) {
-const wordsArray = str == '................................................................' ? ['blank'] : str.trim().split(/\s+/);
+const wordsArray = str.trim().split(/\s+/);
     return wordsArray[0];
   }
 
@@ -76,8 +76,10 @@ function generuotiEilute(tekstas, i) {
 	
 	return `<div>
  			<input type="checkbox" id="${getFirstWord(tekstas) + i}" class="myCheckbox">
-    				<label id="rLabel" for="${getFirstWord(tekstas) + i}">${tekstas}</label>
-				<button type="button" class="listBtn minusButton dont-print" style="background-color: #ffffff; color: #a90909; border: none;">${deleteIcon}</button>
+    				<label id="rLabel" for="${getFirstWord(tekstas) + i}">
+					${tekstas}
+     					<button type="button" class="listBtn minusButton dont-print" style="background-color: #ffffff; color: #a90909; border: none;">${deleteIcon}</button>
+				</label>	
 		</div>`;
 }
 
@@ -87,10 +89,6 @@ function generuotiSarasa(array) {
     for (let i = 0; i < daiktuKategorija.length; i++) {
         container += generuotiEilute(daiktuKategorija[i], i);
 	}
-	    for (let i = 0; i < 2; i++) {
-        container += generuotiEilute('................................................................', i);
-	}
-
 	container += addListItemInput;
 	
     return container;
