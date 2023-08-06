@@ -57,7 +57,7 @@ const wordsArray = str == '.....................................................
     return wordsArray[0];
   }
 
-const deleteIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+const deleteIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 12 12">
   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
 </svg>`;
 
@@ -66,7 +66,7 @@ function generuotiEilute(tekstas, i) {
 	return `<div>
  			<input type="checkbox" id="${getFirstWord(tekstas) + i}" class="myCheckbox">
     				<label id="rLabel" for="${getFirstWord(tekstas) + i}">${tekstas}</label>
-				<button type="button" class="minusButton" style="background-color: #ffffff; color: inherit; border: none;">${deleteIcon}</button>
+				<button type="button" class="minusButton" style="background-color: #ffffff; color: #a90909; border: none;">${deleteIcon}</button>
 		</div>`;
 }
 
