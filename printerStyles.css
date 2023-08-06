@@ -131,6 +131,7 @@ input[type="checkbox"] {
 
 @page { 
 	size: landscape; 	
+	margin-top: .5mm;
 }
 
 .strikethrough {
