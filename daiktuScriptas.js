@@ -149,7 +149,7 @@ function strikethroughLabelsIfChecked() {
 
 function removeListItemIfMinusBtnClicked(minusButtons) {
 	//const minusButtons = document.querySelectorAll('.minusButton');
-	minusButtons.length > 1 ? console.log([minusButtons[0]) : null;
+	minusButtons.length > 1 ? console.log(minusButtons[0]) : null;
 	minusButtons.forEach(btn => {
 		btn.addEventListener('click', function() {
 			btn.parentNode.remove();
