@@ -132,7 +132,7 @@ function strikethroughLabelsIfChecked() {
 };
 
 function removeListItemIfMinusBtnClicked() {
-	const minusButtons = document.getElementsByClassName('minusButton');
+	const minusButtons = document.querySelectorAll('.minusButton');
 
 	minusButtons.forEach(btn => {
 		btn.addEventListener('click', function() {
