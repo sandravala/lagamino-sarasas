@@ -162,6 +162,8 @@
 	font-family:Impact;
 	padding:13px 13px;
 	text-decoration:none;
+	line-height: 1em;
+    padding: 2px;
 }
 .minusButton:hover {
 	background-color:#408c99;
