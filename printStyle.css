@@ -34,7 +34,8 @@ text-align: center;
 }
 
 @page { 
-	size: landscape; 	
+	size: landscape; 
+	margin-top: .5cm;
 }
 
 #rLabel {
