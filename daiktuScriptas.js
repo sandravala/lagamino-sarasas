@@ -160,11 +160,10 @@ function removeListItemIfMinusBtnClicked() {
 
 function showAddListItemInput() {
 	const addButtons = document.querySelectorAll('.addButton');
-	const addInputs = document.querySelectorAll('.add-list-item-input');
 	
 	addButtons.forEach(btn => {
 		btn.addEventListener('click', function() {
-			addInputs.forEach(addInput => {
+			let addInput = btn.previousElementSibling;
 				if (addInput.classList.contains('is-hidden')) {
 					addInput.classList.remove('is-hidden'); 
 					btn.innerHTML = 'Išsaugoti';
