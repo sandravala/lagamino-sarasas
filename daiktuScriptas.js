@@ -186,7 +186,7 @@ function addListItemOnClick() {
 				let divOfAddInput = addInput.parentNode;
 				let i = divOfAddInput.parentNode.childElementCount - 2;
 				let newListItem = generuotiEilute(addInput.value, i);
-				divOfAddInput.parentNode.insertBefore(newListItem, divOfAddInput);
+				divOfAddInput.insertAdjacentHTML('beforebegin', newListItem);
 			} 
 		});
 		
