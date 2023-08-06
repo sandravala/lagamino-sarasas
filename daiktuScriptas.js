@@ -132,6 +132,9 @@ function strikethroughLabelsIfChecked() {
 	const labels = document.querySelectorAll("label[for][id='rLabel']");
 	
 		labels.forEach(label => {
+			if(!label.classList.contains('strikethrough-function')) {
+			label.classList.add('strikethrough-function');
+				
 			const checkboxId = label.getAttribute("for");
 			const checkbox = document.getElementById(checkboxId);
 		
@@ -144,17 +147,20 @@ function strikethroughLabelsIfChecked() {
 			        }
 			      });
 			    }
+			}
 		});
 };
 
-function removeListItemIfMinusBtnClicked(minusButtons) {
-	//const minusButtons = document.querySelectorAll('.minusButton');
-	minusButtons.length > 1 ? console.log(minusButtons[0]) : null;
+function removeListItemIfMinusBtnClicked() {
+	const minusButtons = document.querySelectorAll('.minusButton');
+	
 	minusButtons.forEach(btn => {
-		btn.addEventListener('click', function() {
-			btn.parentNode.remove();
-		});
-		
+		if(!btn.classList.contains('remove-function')) {
+			btn.addEventListener('click', function() {
+				btn.parentNode.remove();
+			});
+			btn.classList.add('remove-function');
+		} 
 	});
 };
 
@@ -187,10 +193,8 @@ function addListItemOnClick() {
 				let i = divOfAddInput.parentNode.childElementCount - 2;
 				let newListItem = generuotiEilute(addInput.value, i);
 				divOfAddInput.insertAdjacentHTML('beforebegin', newListItem);
-				let arr = [];
-				arr.push(divOfAddInput.previousSibling.lastChild);
-				console.log(arr[0] ? arr[0] : 'no such element');
-				removeListItemIfMinusBtnClicked(arr);
+				strikethroughLabelsIfChecked();
+				removeListItemIfMinusBtnClicked();
 			} 
 		});
 		
