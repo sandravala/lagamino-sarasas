@@ -174,8 +174,7 @@ function showAddListItemInput() {
 			});
 		
 		});
-	});
-};
+	};
 
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
