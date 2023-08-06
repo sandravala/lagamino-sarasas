@@ -176,6 +176,23 @@ function showAddListItemInput() {
 		});
 	};
 
+function addListItemOnClick() {
+	const plusButtons = document.querySelectorAll('.plusButton');
+	
+	plusButtons.forEach(btn => {
+		btn.addEventListener('click', function() {
+			let addInput = btn.previousElementSibling;
+			if (addInput.value !== '') {
+				let divOfAddInput = addInput.parentNode;
+				let i = divOfAddInput.parentNode.childElementCount - 2;
+				let newListItem = generuotiEilute(addInput.value, i);
+				divOfAddInput.insertAdjacentElement("beforebegin", newListItem);
+			} 
+		});
+		
+	});
+};
+
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
 
