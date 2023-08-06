@@ -108,17 +108,23 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+	console.log('label: domcontent loaded');
 const labels = document.querySelectorAll("label[for][id='rLabel']");
 
 	labels.forEach(label => {
+		console.log('label: ' + label);
 		const checkboxId = label.getAttribute("for");
 		const checkbox = document.getElementById(checkboxId);
 	
 		if (checkbox) {
+		console.log('checkbox: ' + checkbox);
 		checkbox.addEventListener("change", function() {
 		        if (checkbox.checked) {
+		console.log('checkbox checked: ' + checkbox);
 		          label.classList.add("strikethrough");
 		        } else {
+		console.log('checkbox unchecked: ' + checkbox);
+				
 		          label.classList.remove("strikethrough");
 		        }
 		      });
