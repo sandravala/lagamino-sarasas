@@ -69,7 +69,7 @@ const addListItemInput = `<div class="add-list-item-input is-hidden">
 					</svg>
     				</button>
 			</div>
-   			<div><button type="button" class="listBtn addButton dont-print" style="background-color: #ffffff; color: #1c7f18; border: none; padding-top: 0.9em;">Pridėti</button></div>
+   			<div><button type="button" class="listBtn addButton dont-print" style="background-color: #ffffff; color: #1c7f18; border: none; padding-top: 0.8em;">Pridėti</button></div>
   `;
 
 function generuotiEilute(tekstas, i) {
