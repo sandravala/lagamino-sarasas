@@ -90,6 +90,8 @@ function generuotiSarasa(array) {
 	    for (let i = 0; i < 2; i++) {
         container += generuotiEilute('................................................................', i);
 	}
+
+	container += addListItemInput;
 	
     return container;
 }
