@@ -73,10 +73,11 @@ const addListItemInput = `<div class="add-list-item-input is-hidden">
   `;
 
 function generuotiEilute(tekstas, i) {
-	
+
+	let idNo = "-" + i + "-" + Date.now();
 	return `<div>
- 				<input type="checkbox" id="${getFirstWord(tekstas) + i}" class="myCheckbox">
-    				<label id="rLabel" for="${getFirstWord(tekstas) + i}">${tekstas}</label>
+ 				<input type="checkbox" id="${getFirstWord(tekstas) + idNo}" class="myCheckbox">
+    				<label id="rLabel" for="${getFirstWord(tekstas) + idNo}">${tekstas}</label>
 				<button type="button" class="listBtn minusButton dont-print" style="background-color: #ffffff; color: #a90909; border: none;">${deleteIcon}</button>
 		</div>`;
 };
