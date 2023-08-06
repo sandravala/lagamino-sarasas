@@ -172,10 +172,10 @@ function showAddListItemInput() {
 			let addInput = btn.parentNode.previousElementSibling;
 				if (addInput.classList.contains('is-hidden')) {
 					addInput.classList.remove('is-hidden'); 
-					btn.innerHTML = 'Išsaugoti';
+					btn.innerHTML = 'Atlikta';
 				} else {
 					addInput.classList.add('is-hidden');
-					btn.innerHTML = 'Atlikta';
+					btn.innerHTML = 'Pridėti';
 				}
 			});
 		
@@ -195,6 +195,7 @@ function addListItemOnClick() {
 				divOfAddInput.insertAdjacentHTML('beforebegin', newListItem);
 				strikethroughLabelsIfChecked();
 				removeListItemIfMinusBtnClicked();
+				addInput.value = '';
 			} 
 		});
 		
