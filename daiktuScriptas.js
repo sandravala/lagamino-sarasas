@@ -242,7 +242,7 @@ function printData() {
 	setTimeout(function() {
 		newWin.print();
 		newWin.close();
-	}, 100);
+	}, 400);
 	
 }
 
