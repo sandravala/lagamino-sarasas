@@ -149,3 +149,26 @@
 .strikethrough {
   text-decoration: line-through;
 }
+
+.minusButton {
+	background-color:#487aa3;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #29668f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Impact;
+	font-size:25px;
+	padding:13px 13px;
+	text-decoration:none;
+}
+.minusButton:hover {
+	background-color:#408c99;
+}
+.minusButton:active {
+	position:relative;
+	top:1px;
+}
+
