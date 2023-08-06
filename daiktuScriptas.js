@@ -58,7 +58,11 @@ const wordsArray = str == '.....................................................
   }
 
 function generuotiEilute(tekstas, i) {
-	return `<div><input type="checkbox" id="${getFirstWord(tekstas) + i}" class="myCheckbox"><label id="rLabel" for="${getFirstWord(tekstas) + i}">${tekstas}</label></div>`;
+	return `<div>
+ 			<input type="checkbox" id="${getFirstWord(tekstas) + i}" class="myCheckbox">
+    				<label id="rLabel" for="${getFirstWord(tekstas) + i}">${tekstas}</label>
+				<button type="button" class="minusButton">-</button>
+		</div>`;
 }
 
 function generuotiSarasa(array) {
@@ -126,6 +130,17 @@ function strikethroughLabelsIfChecked() {
 			    }
 		});
 };
+
+function removeListItemIfMinusBtnClicked() {
+	const minusButtons = document.getElementsByClassname('minusButton');
+
+	minusButtons.forEach(btn => {
+		btn.addEventListener('click', function() {
+			btn.parentNode.remove();
+		});
+		
+	});
+}
 
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
