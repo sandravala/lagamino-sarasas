@@ -107,30 +107,25 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
 	return result;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-	console.log('label: domcontent loaded');
-const labels = document.querySelectorAll("label[for][id='rLabel']");
+function strikethroughLabelsIfChecked() {
 
-	labels.forEach(label => {
-		console.log('label: ' + label);
-		const checkboxId = label.getAttribute("for");
-		const checkbox = document.getElementById(checkboxId);
+	const labels = document.querySelectorAll("label[for][id='rLabel']");
 	
-		if (checkbox) {
-		console.log('checkbox: ' + checkbox);
-		checkbox.addEventListener("change", function() {
-		        if (checkbox.checked) {
-		console.log('checkbox checked: ' + checkbox);
-		          label.classList.add("strikethrough");
-		        } else {
-		console.log('checkbox unchecked: ' + checkbox);
-				
-		          label.classList.remove("strikethrough");
-		        }
-		      });
-		    }
-	});
-});
+		labels.forEach(label => {
+			const checkboxId = label.getAttribute("for");
+			const checkbox = document.getElementById(checkboxId);
+		
+			if (checkbox) {
+			checkbox.addEventListener("change", function() {
+			        if (checkbox.checked) {
+			          label.classList.add("strikethrough");
+			        } else {				
+			          label.classList.remove("strikethrough");
+			        }
+			      });
+			    }
+		});
+};
 
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/themes/botiga/assets/css/styles.min.css?ver=2.1.1" media="all">
 // <link rel="stylesheet" href="https://www.12gm.lt/wp-content/uploads/botiga/custom-styles.css?ver=1690386668" media="all">
@@ -204,6 +199,7 @@ function getCalculationResult() {
 let buttonGenerate = document.getElementsByClassName('formbox__btn-calc')[0];
 buttonGenerate.addEventListener("click", function(){
 	generateAlertOrResult();
+	strikethroughLabelsIfChecked();
 	resultBlock.removeAttribute('id');
 })
 
