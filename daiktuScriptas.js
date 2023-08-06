@@ -163,7 +163,7 @@ function showAddListItemInput() {
 	
 	addButtons.forEach(btn => {
 		btn.addEventListener('click', function() {
-			let addInput = btn.previousElementSibling;
+			let addInput = btn.parentNode.previousElementSibling;
 				if (addInput.classList.contains('is-hidden')) {
 					addInput.classList.remove('is-hidden'); 
 					btn.innerHTML = 'Išsaugoti';
