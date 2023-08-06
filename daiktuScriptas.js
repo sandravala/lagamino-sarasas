@@ -76,10 +76,8 @@ function generuotiEilute(tekstas, i) {
 	
 	return `<div>
  			<input type="checkbox" id="${getFirstWord(tekstas) + i}" class="myCheckbox">
-    				<label id="rLabel" for="${getFirstWord(tekstas) + i}">
-					${tekstas}
-     					<button type="button" class="listBtn minusButton dont-print" style="background-color: #ffffff; color: #a90909; border: none;">${deleteIcon}</button>
-				</label>	
+    				<label id="rLabel" for="${getFirstWord(tekstas) + i}">${tekstas}</label>
+				<button type="button" class="listBtn minusButton dont-print" style="background-color: #ffffff; color: #a90909; border: none;">${deleteIcon}</button>
 		</div>`;
 }
 
