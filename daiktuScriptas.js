@@ -5,6 +5,7 @@ let resultBlock = document.getElementsByClassName('has-result')[0];
 let rangesTouched = 0;
 let radiosTouched = 0;
 let alertText = null;
+let errorText = 'Klaida! Įvesti ne visi duomenys'
 
 function removeElement(element) {
     if (element) {
@@ -247,7 +248,7 @@ function printData() {
 }
 
 function generateAlertOrResult() {
-	alertText = inputsTouched() ?  '' : 'error';
+	alertText = inputsTouched() ?  '' : errorText;
 }
 
 function getAlert() {
