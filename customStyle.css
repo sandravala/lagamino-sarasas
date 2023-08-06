@@ -181,3 +181,8 @@ input[type="text"] {
     width: 20em;
 border-radius: 6px;
 }
+
+.add-list-item-input {
+    display: flex;
+padding-top: 0.8em;
+}
