@@ -187,7 +187,7 @@ function addListItemOnClick() {
 				let i = divOfAddInput.parentNode.childElementCount - 2;
 				let newListItem = generuotiEilute(addInput.value, i);
 				divOfAddInput.insertAdjacentHTML('beforebegin', newListItem);
-				removeListItemIfMinusBtnClicked([newListItem.lastChild]);
+				removeListItemIfMinusBtnClicked([divOfAddInput.previousSibling.lastChild]);
 			} 
 		});
 		
