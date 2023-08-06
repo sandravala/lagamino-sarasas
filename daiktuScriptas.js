@@ -175,7 +175,7 @@ function showAddListItemInput() {
 					btn.innerHTML = 'Išsaugoti';
 				} else {
 					addInput.classList.add('is-hidden');
-					btn.innerHTML = 'Pridėti';
+					btn.innerHTML = 'Atlikta';
 				}
 			});
 		
@@ -209,6 +209,7 @@ function addListItemOnClick() {
 // <link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/customStyle.css?ver=1.5.2" media="all">
 // <link rel="stylesheet" href="https://sandravala.github.io/lagamino-sarasas/printStyle.css?ver=1" media="all">
 
+
 function printData() {
 
 	const newHead = 
@@ -230,20 +231,6 @@ function printData() {
 
 	const url = location.protocol + '//' + location.host + location.pathname;
 
-	// if(window.open) {
-	// newWin = window.open(url, "_blank");
-	// newWin.document.write('<html lang="lt-LT">');
-	// newWin.document.write(newHead);
-	// newWin.document.write(dataToPrint.outerHTML);
-	// newWin.document.write('</body></html>');
-	// setTimeout(function() {
-	// 	newWin.print();
-	// 	//newWin.close();
-	// }, 100);
-	// } else {
-	// 	window.print();
-	// }
-
 	newWin = window.open(url, "_blank");
 	newWin.document.write('<html lang="lt-LT">');
 	newWin.document.write(newHead);
@@ -252,7 +239,7 @@ function printData() {
 	
 	setTimeout(function() {
 		newWin.print();
-		//newWin.close();
+		newWin.close();
 	}, 100);
 	
 }
