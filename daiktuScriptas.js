@@ -102,7 +102,7 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
 		  	<div class="formbox__field is-result">
 			    	<div class="formbox__htmlBlock-result for-printing">
 					<div class="result-grid-column">
-						<div class="rHeader">APRANGA</div>
+						<div class="rHeader">APRANGA*</div>
 						<div>${generuotiSarasa(rubaiSarasui)}</div>
 					</div>
 					<div class="result-grid-column">
@@ -121,6 +121,7 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
       						<div class="rHeader">KITA</div>
 						<div>${generuotiSarasa(kita)}</div>
 					</div>
+     					<div class="remark-html">*Įskaitant ir tuos rūbus, kuriuos apsivilksi. Pavyzdžiui, jei užsidėsi trejus <span class="triusikai">triusikus</span>, tai į lagaminą krauti jau galėsi trejais mažiau ;D</div>
 				</div>
 			</div>
 		</div>
@@ -242,7 +243,7 @@ function printData() {
 	
 	setTimeout(function() {
 		newWin.print();
-		newWin.close();
+		//newWin.close();
 	}, 400);
 	
 }
