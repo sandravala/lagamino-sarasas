@@ -88,12 +88,6 @@
     margin-left: 8px;
 }
 
-@media screen and (min-width: 776px) {
-    .formbox__container {
-        grid-template-columns:100%
-    }
-}
-
 .rHeader {
     margin-bottom: 0.7em;
     margin-top: 0.7em;
@@ -128,6 +122,12 @@
     font-weight: 400;
 }
 
+@media screen and (min-width: 776px) {
+    .formbox__container {
+        grid-template-columns:100%
+    }
+}
+
 @media screen and (min-width: 720px) {
 .formbox__htmlBlock-result {
     display: grid;
@@ -139,10 +139,7 @@
 
 @media screen and (max-width: 720px) {
 .formbox__htmlBlock-result {
-    display: grid;
-    align-items: flex-start;
-    column-gap: 0.75em;
-		grid-template-columns: 100%;
+    display: block;
 }
 .print-btn {
 	display: none;
@@ -196,15 +193,6 @@ padding-top: 0.8em;
 
 .remark-html {
     grid-column: 1 / span 2;
-    grid-row: 5;
-    font-size: .8em;
-    color: gray;
-    font-style: italic;
-    padding-top: 1.5em;
-}
-
-.remark-print {
-    grid-column: 1 / span 4;
     grid-row: 5;
     font-size: .8em;
     color: gray;
