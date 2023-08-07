@@ -152,3 +152,8 @@ input[type="checkbox"] {
     font-style: italic;
     padding-top: 1.5em;
 }
+
+.triusikai {
+    font-size: inherit;
+    color: #fb56cb;
+}
