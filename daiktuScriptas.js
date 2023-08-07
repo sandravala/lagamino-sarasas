@@ -125,7 +125,7 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
 							<div>${generuotiSarasa(kita)}</div>
 						</div>
 					</div>
-     					<div class="remark-html remark-print">*Įskaitant ir tuos rūbus, kuriuos apsivilksi. Pavyzdžiui, jei užsidėsi trejus <span class="triusikai">triusikus</span>, tai į lagaminą krauti jau galėsi trejais mažiau ;D</div>
+     					<div class="remark-html remark-print">*Įskaitant ir tuos rūbus, kuriuos apsivilksi. Pavyzdžiui, jei užsidėsi trejus <span class="triusikai">triusikus</span>, tai į lagaminą krauti jau galėsi trimis mažiau ;D</div>
 				</div>
 			</div>
 		</div>
