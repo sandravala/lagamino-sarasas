@@ -247,7 +247,7 @@ function printData() {
 	
 	setTimeout(function() {
 		newWin.print();
-		//newWin.close();
+		newWin.close();
 	}, 400);
 	
 }
