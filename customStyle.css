@@ -193,3 +193,26 @@ input[type="text"] {
     display: flex;
 padding-top: 0.8em;
 }
+
+.remark-html {
+    grid-column: 1 / span 2;
+    grid-row: 5;
+    font-size: .8em;
+    color: gray;
+    font-style: italic;
+    padding-top: 1.5em;
+}
+
+.remark-print {
+    grid-column: 1 / span 4;
+    grid-row: 5;
+    font-size: .8em;
+    color: gray;
+    font-style: italic;
+    padding-top: 1.5em;
+}
+
+.triusikai {
+    font-size: inherit;
+    color: #fb56cb;
+}
