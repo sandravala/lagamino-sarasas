@@ -101,25 +101,29 @@ function generateResult(rubaiSarasui, kita, dokumentai, asmensHigiena, technika,
 		<div class="formbox__body">
 		  	<div class="formbox__field is-result">
 			    	<div class="formbox__htmlBlock-result for-printing">
-					<div class="result-grid-column">
-						<div class="rHeader">APRANGA*</div>
-						<div>${generuotiSarasa(rubaiSarasui)}</div>
-					</div>
-					<div class="result-grid-column">
-						<div class="rHeader">ASMENS HIGIENA</div>
-						<div>${generuotiSarasa(asmensHigiena)}</div>
-					</div>
-     					<div class="result-grid-column">
-						<div class="rHeader">DOKUMENTAI</div>
-						<div>${generuotiSarasa(dokumentai)}</div>
-						<div class="rHeader">TECHNIKA</div>
-						<div>${generuotiSarasa(technika)}</div>
-					</div>
-					<div class="result-grid-column">
-						<div class="rHeader">RANKINIS BAGAŽAS</div>
-						<div>${generuotiSarasa(rankinisBagazas)}</div>
-      						<div class="rHeader">KITA</div>
-						<div>${generuotiSarasa(kita)}</div>
+					<div class="result-grid-column-wrapper">
+						<div class="result-grid-column">
+							<div class="rHeader">APRANGA*</div>
+							<div>${generuotiSarasa(rubaiSarasui)}</div>
+						</div>
+						<div class="result-grid-column">
+							<div class="rHeader">ASMENS HIGIENA</div>
+							<div>${generuotiSarasa(asmensHigiena)}</div>
+						</div>
+     					</div>
+	  				<div class="result-grid-column-wrapper">
+	     					<div class="result-grid-column">
+							<div class="rHeader">DOKUMENTAI</div>
+							<div>${generuotiSarasa(dokumentai)}</div>
+							<div class="rHeader">TECHNIKA</div>
+							<div>${generuotiSarasa(technika)}</div>
+						</div>
+						<div class="result-grid-column">
+							<div class="rHeader">RANKINIS BAGAŽAS</div>
+							<div>${generuotiSarasa(rankinisBagazas)}</div>
+	      						<div class="rHeader">KITA</div>
+							<div>${generuotiSarasa(kita)}</div>
+						</div>
 					</div>
      					<div class="remark-html">*Įskaitant ir tuos rūbus, kuriuos apsivilksi. Pavyzdžiui, jei užsidėsi trejus <span class="triusikai">triusikus</span>, tai į lagaminą krauti jau galėsi trejais mažiau ;D</div>
 				</div>
